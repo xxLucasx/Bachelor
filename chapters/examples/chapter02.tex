@@ -13,21 +13,21 @@ Bei der Analyse wurden die folgenden drei Stakeholder festgestellt:
 
 \begin{itemize}
 	\item \ac{FuT}
-	\item Entwickler
+	\item IT-Systemspezialist
 	\item Mitarbeiter
 \end{itemize}
 Die \ac{FuT} entsprechen den Stakeholdern, die die Berechtigungsstruktur für die jährliche Rezertifizierung nutzen.
 Diese haben für eine hohe Priorität, da diese die Berechtigungsstruktur direkt verwenden und für die Sicherheit der Struktur gewähren.
 \newline
-Die Entwickler sind die Stakeholder, die an der Berechtigungsstruktur gearbeitet haben.
-Ebenso wie die Teamleiter und Führungskräfte haben die Entwickler auch eine hohe Priorität, weil diese die Struktur warten und verändern.
+Die IT-Systemspezialisten sind die Stakeholder, die an der Berechtigungsstruktur gearbeitet haben.
+Ebenso wie die Teamleiter und Führungskräfte haben die IT-Systemspezialisten auch eine hohe Priorität, weil diese die Struktur warten und verändern.
 \newline
 Die Mitarbeiter umfassen das restlichen Arbeitspersonal.
 Im Gegensatz zu den anderen beiden Stakeholder haben die Mitarbeiter eine geringe Priorität, da diese weder die Struktur nutzen noch einen anderen Kontakt haben.
 \newline
 \newline
 Nachdem diese drei Stakeholder festgestellt worden sind, wurde spezifisch für diese drei Fragenkataloge entwickelt.
-Dabei ist das Ziel festzustellen, welche die größten Probleme aus der Sicht der Teamleiter und Führungskräfte sowie Entwickler gibt.
+Dabei ist das Ziel festzustellen, welche die größten Probleme aus der Sicht der Teamleiter und Führungskräfte sowie IT-Systemspezialisten gibt.
 Die Mitarbeiter wurden befragt, wie viele Berechtigungen diese verfügen, die sie eigentlich nicht mehr brauchen.
 Die große Herausforderung besteht dabei, die richtigen Fragen für die Fragenkataloge zu entwerfen.
 Die Institution \ac{PRC} hat festgestellt, dass bei geschlossenen Fragen die befragt zu einem großen Teil (über 90\%) eine der vorgeschlagenen Antwortet gewählt haben. \cite{Survey}
@@ -62,7 +62,7 @@ Dabei wurden auch konkrete Vorschläge in den Fragen unterbreitet, um einen erst
 Zum Schluss gab es noch die offene Frage, ob es weitere Anmerkungen gibt, um eventuelle Antworten und Anmerkung zu erhalten, die durch die vorherigen Fragen nicht abgedeckt wurden.
 \newline
 \newline
-Für die Entwickler wurden die folgenden Fragen überlegt: 
+Für die IT-Systemspezialisten wurden die folgenden Fragen überlegt: 
 \begin{itemize}
 	\item Welche Erfahrung haben Sie mit der Berechtigungsstruktur gehabt?
 	\item Auf welche Probleme sind Sie im Zusammenhang mit der Berechtigungsstruktur gestoßen?
@@ -87,10 +87,66 @@ Die Mitarbeiter haben die Frage bekommen:
 Bei dieser Frage ware es wichtig diese so zu formulieren, dass die befragte Person nicht den Eindruck bekommt, dass ich ihr die Berechtigungen wegnehmen möchte.
 Dies würde ansonsten zu fehlerhaften Ergebnissen führen.
 Die Befragung der Mitarbeiter dient dazu, um die Problematik der nicht optimalen Berechtigungsstruktur darzustellen und auch um feste Zahlen zu haben.
-
+\newline
+\newline
+Dabei wurden die \ac{FuT} in der Informatikabteilung befragt, da diese am ehesten Kontakt mit der Berechtigungstruktur haben.
+Andere \ac{FuT} außerhalb der Informatik wurden nicht befragt, weil die Wahrscheinlichkeit zu gering ist zum zeitlichen Aufwand.
+Bei den IT-Systemspezialisten wurden alle Personen befragt, die mir bekannt waren.
+Von den Mitarbeitern wurden zufällig von jedem Team von jeder Abteilung einer befragt.
+Dies soll dazu dienen, dass man das Ergebnis skalieren kann.
+\newpage
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Die folgenden Graphiken zeigen die Antworten der jeweiligen Befragungen.
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{gfx/Picture/FuT.PNG}
+ \caption{Auswertung der Ergebnisse von den \ac{FuT}}
+ \label{fig:Fut}
+\end{figure}
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{gfx/Picture/IT.PNG}
+ \caption{Auswertung der Ergebnisse von den IT-Systemspezialisten}
+ \label{fig:IT}
+\end{figure}
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{gfx/Picture/Mitarbeiter.PNG}
+ \caption{Auswertung der Ergebnisse von den Mitarbeitern}
+ \label{fig:Mit}
+\end{figure}
+\newpage
+Von den zehn befragten Teamleitern (Graphik \ref{fig:Fut}) haben vier davon an der Umfrage teilgenommen.
+Von diesen vier haben drei angegeben, dass sie mit der aktuellen Struktur und Vorgehen umgehen können, es aber Verbesserungsbedarf besteht.
+Dabei haben sie folgende Vorschläge gemacht:
+
+\begin{itemize}
+	\item Veraltete Vorgänge entfernen
+	\item Helvetia Leben braucht keine HV/HI Mandaten
+	\item Nur Änderung zum Vorjahr vergleichen
+	\item Überprüfung von Sachgebieten anstelle von Profilen/Vorgängen
+\end{itemize}
+
+Der erste Punkt wird aktuell sukzessive umgesetzt, ist jedoch nicht einfach und dauert lange.
+Die Helvetia Versicherung ist aufgrund von gesetzlichen Regelungen in die Helvetia Leben und Helvetia Komposit aufgeteilt.
+Dabei umfasst Helvetia Leben alle Versicherungen für die Person.
+Dazu verfügt die Helvetia über drei Mandaten (HV, HI und HL).
+Der HV Mandat wird für den Zugriff von deutschen Daten verwendet.
+HI im Gegensatz ist der Mandat für internationale Informationen.
+Helvetia Leben hat explizit den HL Mandaten.
+Deswegen wurde vorgeschlagen, dass die Helvetia Leben Mitarbeiter nicht die anderen beiden benötigen.
+Jedoch ist dies nicht umsetztbar, da es Fälle gibt bei denen diese auf die anderen Daten zugreifen müssen.
+Zum Beispiel wenn ein Vermittler nach Daten fragt, die nur über den HV Mandaten verfügbar sind, muss der Mitarbeiter in der Lage sein, diese zu zugreifen.
+\newline
+Der Vorschlag, dass man nur Änderung zum Vorjahr vergleicht würde den Aufwand massiv reduzieren, würde aber nicht mehr den Sinn der jährlichen Rezertifizierung erfüllen.
+Das Problem dabei besteht, dass ein Mitarbeiter nach mehreren Jahren eine Berechtigungen nicht mehr benötigt.
+Wenn man dann nur den Vergleich zum Vorjahr betrachtet, würde diesem nie die Berechtigungen entzogen werden.
+\newline
+Die Überprüfung mittels Sachgebiete anstelle von Profilen/Vorgängen findet aktuell schon statt, da der Aufwand bei der Überprüfung der indivduellen Profilen/Vorgängen zu groß wäre.
+Zudem bestände dann auch die große Wahrscheinlichkeit, dass versehentlich gewisse Profile/Vorgänge übersehen werden, welche eigentlich entfernt werden müssten.
 
 \section{Ergebnis}
 \label{sec:Ergebnis}
