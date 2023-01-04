@@ -147,6 +147,53 @@ Wenn man dann nur den Vergleich zum Vorjahr betrachtet, würde diesem nie die Be
 \newline
 Die Überprüfung mittels Sachgebiete anstelle von Profilen/Vorgängen findet aktuell schon statt, da der Aufwand bei der Überprüfung der indivduellen Profilen/Vorgängen zu groß wäre.
 Zudem bestände dann auch die große Wahrscheinlichkeit, dass versehentlich gewisse Profile/Vorgänge übersehen werden, welche eigentlich entfernt werden müssten.
+\newline
+\newline
+Von den IT-Systemspezialisten haben sechs von sieben an der Befragung (\ref{fig:IT}) teilgenommen.
+Im Interview mit den Befragten Personen haben diese verschiedene Anmerkung zum bestehenden System gegeben:
 
+\begin{itemize}
+	\item Chaotisch hiercheraufbau
+	\item Intransparent
+	\item Schreckliches durcheinander
+\end{itemize}
+
+Wie man an den Bemerkung erkennen kann, sehen die IT-Systemspezialisten das größte Problem bei der Hierarchie und dem Aufbau der Struktur.
+Dabei haben sie verschiedene Vorschläge gemacht wie man die Struktur aus ihrer Sicht verbessern kann.
+
+\begin{itemize}
+	\item Transparenter gestalten
+	\item Baumstruktur "`verdammen"'
+	\item Profile in Profile abschaffen
+	\item Eindeutige Struktur
+	\item Konventionen
+\end{itemize}
+Auch wurde angesprochen, ob man das bestehende System nicht in RACF auslagern könnte.
+Dabei wurde erwähnt, dass man sich darüber schonmal gedanken gemacht hat.
+Dies wird weiter im Kapitel (\ref{sec:chapter05:racF}) eingegangen.
+Zudem haben sie auch einen eigenen Lösungsidee vorgeschlagen.
+Dieser wird in (\ref{sec:chapter04:minimal}) erläutert.
+\newline
+\newline
+Bei der Umfrage (\ref{fig:Mit}) von den Mitarbeitern haben 16 von 52 geantwortet.
+Dabei haben sechs Personen angeben, dass diese über gar keine oder keine unnötigen Berechtigungen verfügen.
+Fünf haben geschrieben, dass dies nicht sicher sind und andere fünf haben angegeben, dass diese über Berechtigungen verfügen, die sich eigentlich nicht bräuchten.
+Nachdem ich die Ergebnisse der Personen ausgewertet habe, habe ich mir von ein paar Personen die Berechtigungen angesehen und habe dies mit ihren Aussagen verglichen.
+Dabei habe festgestellt, dass zwei Personen die angegeben haben, dass diese über gar keine Berechtigungen verfügen und den Host nicht verwenden, über Berechtigungen verfügen.
+Da diese nicht über diese Berechtigungen wissen, kann angenommen werden, dass diese nicht benötigen, weil ansonsten diese bei der Umfrage gelogen haben.
+\newline
+\newline
+[Eventuell wird hier noch was eingefügt. Werde die Person fragen, damit es wissenschaftlicher ist]
+\newline
+\newline
+Wenn man dies Berücksichtigt ändert sich der Graphen (\ref{fig:Mit}) wie folgt.
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{gfx/Picture/Mitarbeiter(korregiert).PNG}
+ \caption{Auswertung der Ergebnisse von den Mitarbeitern nach der Überprüfung}
+ \label{fig:MitPruf}
+Wenn man jetzt die Graphik betrachtet kann man erkennen, dass von den Personen die geantwortet haben 33\% zu viele Berechtigungen haben.
+
+\end{figure}
 \section{Ergebnis}
 \label{sec:Ergebnis}
