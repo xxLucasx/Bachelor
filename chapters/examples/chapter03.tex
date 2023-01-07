@@ -15,6 +15,12 @@ Der Host oder als auch Mainframe bekannt ist ein Komplex aus verschiedenen Hochl
 Der Anbieter "`IBM"' definiert diesen dabei wie folgt: 
 \newline
 \newline
+\textit{"`At their core, mainframes are high-performance computers with large amounts of memory and processors that process billions of simple calculations and transactions in real time."'} \cite{Mainframe}
+\newline
+\newline
+Oder übersetzt:
+\newline
+\newline
 \textit{"`Im Kern besteht der Mainframe aus Hochleistungsrechnern, welche über einen großen Speicher verfügen, und in der Lage sind Milliarden von einfachen Prozessen und Transaktion in Echtzeit durch zu führen."'} \cite{Mainframe}
 \newline
 \newline
@@ -27,8 +33,38 @@ Diese soll eine konsistente IT-Strategie vorgeben an welche sich die Unternehmen
 
 \subsection{Berechtigung}
 \label{sec:Berechtigung}
-Phasellus ut ipsum nulla, vitae venenatis augue. Suspendisse potenti. Mauris suscipit justo a dolor laoreet lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam commodo commodo dui, nec auctor mi malesuada et. Aenean tortor erat, semper eu ullamcorper non, dignissim sed lectus. Praesent et pretium leo.
-
+Dabei definiert die \ac{NIST}, welche eine Institution von amerikanische Regierung ist, Berechtigungen wie folgt:
+\newline
+\newline
+\textit{"`The right or a permission that is granted to a system entity to access a system resource."'} \cite{Auth}
+\newline
+\newline
+Dies bedeutet:
+\newline
+\newline
+\textit{"`Das Recht oder die Erlaubnis haben, um auf System Ressourcen einer Systemeinheit zu zugreifen."'} \cite{Mainframe}
+\newline
+\newline
+Im Kontext des Mainframebereiches betrifft dies hauptsächlich das Betrachten und Zugreifen von Dialogmasken bei der Helvetia.
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{gfx/Picture/Dialog.PNG}
+ \caption{Beispiel Dialogmaske}
+ \label{fig:Dial}
+\end{figure}
+Die Graphik (\ref{fig:Dial}) zeigt ein solches Dialogmaske.
+An hand dieser Dialogmaske kann man erkennen, dass der Nutzer L895 für die aufgezählten weiteren Dialogmasken (EL 00, EX 00,...) zumindest die Leseberechtigung hat.
+Zudem hat dieser die Schreibberechtigungen auf die Dialogmaske DM 00, da dieser sich in dieser Maske aufhält. 
+\newline
+\newline
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{gfx/Picture/Berechtigung.PNG}
+ \caption{Berechtigungsdialogmaske}
+ \label{fig:Berch}
+\end{figure}
+In dieser Graphik (\ref{fig:Berch}) kann man die Profile und individuellen Berechtigungen sehen, die der Nutzer L895 besitzt.
+Dabei sind Profile Container für Berechtigungen.
 \subsection{Berechtigungsstruktur}
 \label{sec:Berechtigungsstruktur}
 Phasellus ut ipsum nulla, vitae venenatis augue. Suspendisse potenti. Mauris suscipit justo a dolor laoreet lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam commodo commodo dui, nec auctor mi malesuada et. Aenean tortor erat, semper eu ullamcorper non, dignissim sed lectus. Praesent et pretium leo.
