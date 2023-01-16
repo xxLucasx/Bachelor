@@ -188,9 +188,9 @@ Wenn man dies Berücksichtigt ändert sich der Graphen (\ref{fig:Mit}) wie folgt
  \includegraphics[width=1\textwidth]{gfx/Picture/Mitarbeiter(korregiert).PNG}
  \caption{Auswertung der Ergebnisse von den Mitarbeitern nach der Überprüfung}
  \label{fig:MitPruf}
+\end{figure}
 Wenn man jetzt die Graphik betrachtet kann man erkennen, dass von den Personen die geantwortet haben 33\% zu viele Berechtigungen haben.
 
-\end{figure}
 \section{Ergebnis}
 \label{sec:Ergebnis}
 
@@ -199,7 +199,39 @@ Sollte einer dieser Mitarbeiter seine Berechtigungen durch zum Beispiel durch ei
 Außerdem existiert eine mögliche Dunkelziffer bei der Befragung der Mitarbeiter, die nicht ehrlich geantwortet haben, weil diese eventuelle Angst haben, dass das Resultat der Befragung potenziell ihnen Berechtigungen entfernt.
 Deswegen stelle ich die Annahme, dass 33\& der Mitarbeiter über Berechtigungen verfügen, die sich nicht benötigen.
 Daher stellt die 33\% lediglich das Minimum dar.
+Die Helvetia versendet jährlich Phishing Mails, um die Mitarbeit zu trainieren, diese zu erkennen.
+Dabei haben verteilt 10\% der Mitarbeiter ihre persönlichen Informationen preisgegeben (\ref{fig:Bef}).
+Wäre dies kein Testfall sondern ein echter Phishing-Angriff und einer der 33\% Mitarbeiter würde dem Angreifer diese Informationen geben, hätte der Angreifer es einfacher das gesamte System zu kompromittieren.
+\newline
+\newline
 Genauso stellen deaktivierte Accounts ein Problem dar, da diese nicht mehr überprüft werden und bei der Reaktivierung keine Rezertifizierung stattfindet, ob diese Person noch sämtliche Berechtigungen benötigt.
 Wodurch die Person Wahrscheinlichkeit besteht, dass diese zu viele Berechtigungen hat.
 Zudem hat die Befragung der \ac{FuT} gezeigt, dass diese über kein tieferes Verständnis zur Struktur oder des Vorgehens verfügen, da diese nicht logische Vorschläge gemacht haben sowie Vorgehensweisen, die bereits verwendet werden.
 Die Entwickler, die bisher an der Berechtigungsstruktur gearbeitet haben, verschiedene Ansätze und Probleme aufgezeigt die im nächsten Kapitel dann ausführlicher behandelt werden.
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{gfx/Picture/Befragung.PNG}
+ \caption{Phishing versuche der Helvetia an den eigenen Mitarbeitern \cite{Helvetia}}
+ \label{fig:Bef}
+\end{figure}
+
+\section{Ist-Zustand}
+\label{sec:chapter03:Ist-Zustand}
+Der Ist-Zustand der Berechtigungsstruktur der Helvetia ist eine chaotisch Organisation.
+Zum Beispiel kann man im Bild \ref{fig:Teil} erkenne, dass das Profil PGE20 eine rekursive Beziehung hat.
+Außerdem gibt es viele redundante Profile innerhalb eines Profiles.
+Das Profil Azub enthält zum Beispiel die Berechtigunen PNE10 welche zwölf mal vergeben wird.
+Dies macht es schwierig festzustellen, wer alles eine spezifische Berechtigung/Profil hat, da diese an verschwiedenen Stellen vorkommt.
+\newline
+Zusätzlich gibt es Profile mit aufsteigenden Nummern wie zum Beispiel PNE10 und PNE20.
+Dabei besteht das Problem, dass diese manchmal eine Bezug zu einander haben und manchmal gar keinen haben.
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{gfx/Picture/Beispiel.PNG}
+ \caption{Ausschnitt der Berechtigungsstruktur}
+ \label{fig:Profile}
+\end{figure}
+Wie man im Graphen erkennen kann hat das Profil PPV00 einen Bezug zu PPV10, PPV30 und PPV40, aber PPV54 hat gar keinen Bezug dazu.
+Zudem sind dort Profil von anderen Fachbereichen vorhanden, welches das Risiko auf rekursive Beziehung erhöht und es schwierig macht die Struktur zu verstehen.
+In diesem Fall fehlt es an einer Richtlinie, welche Vorgibt wie die Beziehung zwischen diesen Profilen sein soll.
+Diese wären Notwendig, da es ansonsten für jemanden, der nicht ein perfektes Wissen hat, welche Profil welche Berechtigungen enthält, nachzuvollziehen.
