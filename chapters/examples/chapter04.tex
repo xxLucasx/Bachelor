@@ -1,23 +1,81 @@
 \chapter{Konzept}
 \label{ch:chapter04}
 In diesem Kapitel wird darauf eingegangen wie Vorgegangen wurde, um verschiedene Konzepte zu entwickeln.
-Dabei werden die vorher erwähnten Befragungen (\ref{ch:Recherche}) verwendet.
-Daraus wird der Ist-Zustand 
+Dabei werden die vorher erwähnten Befragungen (\ref{ch:Recherche}) verwendet, um eine Lösung für die individuellen Probleme zu entwickeln.
+Zudem wird betrachtet der Stand der Technik betrachtet sowie einen Vergleich mit den Datenbankstrukturen gezogen.
+Dies wird getan, da diese eine ähnliche Struktur wie die Profile und Berechtigungen.
+Anschließend werden die Probleme aus den Befragungen quantifiziert, um daraus dann die verschiedenen Konzepte zu entwickeln.
 
 
 \section{Konzeptentwicklung}
 \label{sec:chapter04:Konzeptentwicklung}
-Morbi magna augue, scelerisque in eleifend a, tristique vitae lorem. Vivamus non elementum nisi. Aliquam erat volutpat. Nunc pharetra, tortor ut adipiscing bibendum, orci ipsum mollis felis, ut euismod eros purus at tellus. Sed blandit eros at ante mattis in elementum tortor pharetra. Vivamus molestie mattis orci. Quisque ullamcorper, purus sit amet luctus viverra, turpis arcu imperdiet eros, sit amet viverra nisi ligula ut felis.
 
-\subsection{Wie machen es Wettbewerber}
-\label{sec:chapter04:grafiken:simple}
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec sed ante odio. Integer semper, nibh id sollicitudin adipiscing, odio elit blandit mi, sit amet luctus mauris velit nec velit. Aenean commodo cursus magna, id mollis sapien gravida eu. Aenean eleifend, leo dignissim sodales mattis, tellus ante tempor nunc, vulputate tristique nisl metus sit amet tellus. Nullam sollicitudin, metus sit amet sagittis interdum, metus purus dapibus lacus, pharetra lobortis erat enim a leo. Suspendisse a augue in purus tempor blandit. Aliquam malesuada porttitor nibh vel adipiscing. In mi est, vulputate nec dapibus quis, pharetra vel lacus. Sed pellentesque egestas pretium. Praesent orci risus, ornare non accumsan id, gravida sed lectus. Mauris fermentum viverra neque at dignissim. Sed consectetur auctor lorem, eget volutpat urna sodales id. Etiam pellentesque velit quis sapien tempus convallis. 
+\subsection{Stand der Technik}
+\label{sec:chapter04:Stand}
+In der Welt von Cloud Computing wird \ac{IAM} als Sicherheitsmaßnahme verwendet.
+Dabei wird mittels \ac{IAM} die Identität und der Zugriff reguliert.
+\ac{IAM} kann daher in die folgende fünf Punkte gegliedert werden.
+\newline
+\newline
+1. Authentifizierung der Person
+\newline
+Dabei überprüft, ob die Person auch wirklich, die ist als welche diese sich ausgibt.
+Hierfür gibt es verschiedene Methoden, um dies sicherzustellen.
+Nutzername mit ein Passwort ist die gängigste Methoden, um dies zu tun, welche von den meisten Webseiten und Computern verwendet wird.
+Um die Authentifizierung sicherer zu gestalten werden mehrere Faktoren berücksichtigt, um eine Person zu identifizieren.
+Dies kann zum Beispiel durch einen Fingerabdruck stattfinden. \cite{IamIEEE}(S.1482)
+\newline
+\newline
+2. Berechtigungsvergabe
+\newline
+Es beschäftigt sich damit, welche Berechtigungen der Nutzer bekommt.
+Dies wird mittels Autorisierungsrichtlinien gesichert, damit die Nutzer nur Zugriff auf die Ressourcen und Dienste haben, welche diese benötigen.
+Das wird mit hilfe von Profilen erreicht, welche von der Organisation zugewissen werden. \cite{IamIEEE}(S.1482)
+\newline
+\newline
+3. Identitätsvergabe
+\newline
+Identitätsvergabe sorgt dafür, dass der Nutzer eine digitale ID oder Account erhält.
+Wenn ein Mitarbeiter bei einem Unternehmen arbeit, erhält dieser eine digitale Identität, um auf die Ressourcen des Unternehmen zu greifen zu können.
+Dabei ist auch wichtig, dass der Mitarbeiter diese digitale Identität wieder verliert, wenn dieser das Unternehmen verlässt oder an einer anderen Stelle im Unternehmen arbeitet und nicht mehr seine alte digitale Identität benötigt.
+\newline
+\newline
+4. Föderierte Identität
+\newline
+Dabei handelt es sich darum, dass die digitalen Identitäten über verschiedene Anwendungen und Organisationen gültig sind.
+Dadurch werden die Informationen der digitalen Identität gespeichert.
+Dies hat den Vorteil, dass der Nutzer sich nur einmal anmelden muss, um auf sämtliche seiner Ressourcen zugreifen zu können.
+Dabei werden Protokolle wie SAML, OAuth oder OpenID verwendet.
+Die Folge dadurch ist, dass der Nutzer sich nicht mehrere Passwörter sowie Accounts merken muss. \cite{IamIEEE}(S.1482)
+\newline
+\newline
+5. Compliance Verwaltung
+\newline
+Die Compliance Verwaltung überprüft die Authentifizierung- und Zugriffaufzeichnungen, um sicher zustellen, dass die Richlinien und Sicherheitsstandards eingehalten wurden.
+Diese Überprüfung ist notwendig für effektive Zugriffregeln.
+Zudem werden diese für Audits benötigt. \cite{IamIEEE}(S.1482)
+\newline
+\newline
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{gfx/Picture/IAMISH.PNG}
+ \caption{IAM für Cloud Dienste \cite{Moha19}(Seite 3)}
+ \label{fig:IMAISH}
+\end{figure}
+Dies ist ein Beispiel wie die oben genannten Punkte umgesetzt werden können.
+Dabei haben die Accounts der Personen entweder direkte Berechtigung oder diese werden mittels Gruppen verteilt.
+Sobald der Account die Berechtigung hat, kann dieser auf die dahinter steckende Ressource zugreifen.
+Die Berechtigungen können dabei auch mittels Profile zusammengefasst werden.
+\newline
 
 
 \subsection{Vergleich mit Datenbanken}
 \label{sec:chapter04:grafiken:subfloat}
 Quisque non massa neque. In at placerat lacus. Integer urna augue, laoreet ac mattis sed, posuere ut turpis. Nunc a metus quis elit placerat ultricies vel a eros. Quisque condimentum aliquet fermentum. Integer arcu est, suscipit quis lacinia at, volutpat nec tortor. Proin feugiat tristique est eget luctus. Suspendisse porta mauris sed sapien egestas sit amet volutpat tellus ultricies. Nulla vulputate semper turpis sed blandit. Phasellus at tortor pulvinar nisi luctus gravida.
  
+\section{Herausforderung}
+\label{sec:chapter04:Herausforderung}
+Sed lobortis vestibulum euismod. Vivamus vestibulum gravida nisi vitae condimentum. Nullam nec lacus nibh. Phasellus arcu magna, varius eget viverra a, elementum eu dolor. Aliquam erat volutpat. Sed nibh leo, vestibulum quis lacinia in, vestibulum sollicitudin nulla. In iaculis, purus in imperdiet sagittis, tortor diam pellentesque lectus, eget faucibus ante elit at tortor.
 
 \section{Konzept A}
 \label{sec:chapter03:tabellen}
