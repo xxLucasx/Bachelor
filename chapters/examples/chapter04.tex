@@ -149,12 +149,39 @@ Anhand dieser Reihenfolge werden die folgenden Konzepte entwickelt.
  \label{fig:Prio}
 \end{figure}
 
-\section{Konzept A}
-\label{sec:chapter03:tabellen}
-Sed lobortis vestibulum euismod. Vivamus vestibulum gravida nisi vitae condimentum. Nullam nec lacus nibh. Phasellus arcu magna, varius eget viverra a, elementum eu dolor. Aliquam erat volutpat. Sed nibh leo, vestibulum quis lacinia in, vestibulum sollicitudin nulla. In iaculis, purus in imperdiet sagittis, tortor diam pellentesque lectus, eget faucibus ante elit at tortor.
+\section{Konzept Struktur}
+\label{sec:chapter04:Struktur}
+Das erste Konzept Struktur ist wie folgt aufgebaut.
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=0.75\textwidth]{gfx/Picture/Hierarchie.PNG}
+ \caption{Hierarchie für Konzept Struktur}
+ \label{fig:Struktur}
+\end{figure}
+Wie man in der Graphik (\ref{fig:Teil}) erkennen kann, gibt es bei der aktuellen Berechtigungsstruktur keine Struktur.
+Um dementsprechend die genannten Problem zu beheben wurde die neue Struktur (\ref{fig:Struktur}) entwickelt.
+Um die \ac{K/W} wurden die folgenden Konvention für dieses Konzept entwickelt.
+Profile enthalten nur noch Profile oder Berechtigungen.
+Die Berechtigungsstruktur soll nur noch ein Hierarchietiefe von maximal vier haben.
+Die erste Hierarchiestufe enthält das Standardprofil, welche dem Nutzer gegeben wird.
+Die zweite Hierarchiestufe enthält die jeweiligen Sammellese- und Sammelschreibeprofile, die jeweils in ihre Fachbereiche getrennt sind.
+Die dritte Hierarchiestufe enthält die individuellen Lese- und Schreibprofile.
+Die vierte Stufe enthält die Berechtigungen.
+Manche der bestehenden Profile beinhalten aktuell was zukünftig Hauptprofile wären.
+In solchen Fällen würde diese Profile zu Hauptprofilen werden und vom vorherigen Hauptprofil separiert werden.
+Manche Fachbereiche haben aufzählende Profile (\ref{fig:Profile}).
+Diese Profile sollen nur noch über die Berechtigungen für den eigenen Vorgang enhalten, sodass ein Privas Profil nur Privas Berechtigungen enthält.
+Die Berechtigung die verloren gehen würden eigene Profile bekommen und würden über ein anderes Sammelprofil dem Hauptprofil hinzugefügt werden.
+Sollte ein Nutzer weitere Berechtigungen benötigen, würden diese über ein anderes Hauptprofil, welches am ehesten für die Aufgabe passt, zugeordnet.
+\newline
+Diese Konventionen sollen verhindern, dass die Struktur weiter wächst und das man ohne Problem feststellen kann, was für ein Profil man hat.
+Zudem hat es Vorteil, dass rekursive Beziehung sowie redundante Berechtigungsvergabe nicht möglich sind, da die Profile nur noch Profile oder Berechtigungen enthalten, die nicht mehr auf sich gegenseitig zeigen sollen sondern höchstens sammeln soll.
+Dadurch soll auch die Übersichlichkeit verbessert und das Hierarchie Problem auf ein Minimum gebracht werden.
+Außerdem sollte die Performance verbessert werden durch die fehlenden rekursiven Beziehungen sowie die Vereinfachung der Struktur mit der Reduktion der Berechtigungen.
+\newline
+[Mehr Text über log(o), sobald ich ne Quelle habe]
 
-
-\section{Konzept B}
+\section{Konzept Minimalistisch}
 \label{sec:chapter04:minimal}
 Aliquam ut pretium lectus. Curabitur in eros et sapien aliquet luctus ut sit amet eros. Proin et libero non mi venenatis aliquet at sed lorem. Ut sed enim mi, id viverra eros. Cras metus ante, placerat id commodo at, molestie non libero. Aenean eu risus erat, vel consequat metus. Sed malesuada metus sit amet nisl viverra hendrerit.
 
