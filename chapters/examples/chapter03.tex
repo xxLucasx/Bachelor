@@ -9,7 +9,7 @@ Dadurch soll der Leser ein Grundverständnis erhalten, um die folgenden Kapitel 
 
 \section{Host/Mainframe}
 \label{sec:Host}
-Der Host oder als auch Mainframe bekannt ist ein Komplex aus verschiedenen Hochleistungscomputern.
+Der Host bzw. Mainframe ist ein Komplex aus verschiedenen Hochleistungscomputern.
 Der Anbieter "`IBM"' definiert diesen dabei wie folgt: 
 \newline
 \newline
@@ -22,13 +22,12 @@ Oder übersetzt:
 \textit{"`Im Kern besteht der Mainframe aus Hochleistungsrechnern, welche über einen großen Speicher verfügen, und in der Lage sind Milliarden von einfachen Prozessen und Transaktion in Echtzeit durchzuführen."'} \cite{Mainframe}
 \newline
 \newline
-Eine ähnliche Definition verwenden das Wirtschaftslexikon Gabler \cite{Main} sowie Cambrige Dictionary \cite{CambMain}
-Dabei spielt der Mainframe eine wichtige Rolle in der Finanzindustrie, welche über widerstandsfähigen, sicheren und agilen Servern benötigen.
+Dabei spielt der Mainframe eine wichtige Rolle in der Finanzindustrie, welche widerstandsfähige, sichere und agile Server benötigt.
 Dies ist der Fall, weil die Finanzindustrie über viele sensible Daten verfügt.
-Daher müssen die Server sicher und widerstandfähig sein, damit diese Daten nicht verloren gehen oder gestohlen werden.
-Zudem müssen die Server agil sein, da die Technology und die Regulierungen um den Mainframe sich steht ändern und daher dieser auf dem neuesten Stand sein muss.
-Dieser muss nämlich die Regularien vom \ac{VAIT} erfüllen die von der \ac{BaFin} aufgestellt werden.
-Diese soll eine konsistente IT-Strategie vorgeben, an welche sich die Unternehmen halten müssen. \cite{Vait}
+Daher müssen die Server sicher und widerstandsfähig sein, damit diese Daten nicht verloren gehen oder gestohlen werden.
+Zudem müssen die Server agil sein, da die Technologie und die Regulierungen für den Mainframe sich stehtig ändern und dieser daher immer auf dem neuesten Stand sein muss.
+Der Mainframe muss die Regularien vom \ac{VAIT} erfüllen, die von der \ac{BaFin} aufgestellt werden.
+Die \ac{BaFin} soll eine konsistente IT-Strategie vorgeben, an die sich die Unternehmen halten müssen. \cite{Vait}
 
 \section{Berechtigung}
 \label{sec:Berechtigung}
@@ -41,12 +40,10 @@ Dabei definiert die \ac{NIST}, welche eine Institution von amerikanischer Regier
 Dies bedeutet:
 \newline
 \newline
-\textit{"`Das Recht oder die Erlaubnis haben, um auf System Ressourcen einer Systemeinheit zu zugreifen."'} \cite{Auth}
+\textit{"`Das Recht oder die Erlaubnis haben, um auf System Ressourcen einer Systemeinheit zu zugreifen."'} \cite{Mainframe}
 \newline
 \newline
-Oxford Dictionary gibt eine allgemeinere, aber dennoch ähnlich Definition \cite{AuthOx}.
-Dabei bietet The Economic Times eine fast identische Definition wie der von \ac{NIST} \cite{AuthEco}
-Im Kontext des Mainframebereiches betrifft dies hauptsächlich das Betrachten und Zugreifen von Dialogmasken bei der Helvetia.
+Im Kontext des Mainframebereiches betrifft dies bei Helvetia hauptsächlich das Betrachten und Zugreifen über Dialogmasken auf Daten.
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/Dialog.PNG}
@@ -69,37 +66,36 @@ Dabei sind Profile eine Ansammlung von Berechtigungen.
 
 \section{Berechtigungsstruktur}
 \label{sec:Berechtigungsstruktur}
-Berechtigungsstruktur besteht aus den Berechtigungen, die im Unterkapitel (\ref{sec:Berechtigung}) definiert werden, und aus der Struktur.
+Eine Berechtigungsstruktur besteht aus den Berechtigungen, die im Unterkapitel (\ref{sec:Berechtigung}) definiert werden, und aus der Struktur.
 Dabei definiert Oxford Struktur wie folgt:
 \newline
 \newline
 \textit{"`the way in which the parts of something are connected together, arranged or organized; a particular arrangement of parts"'} \cite{Struct}
 \newline
 \newline
-Dies bedeutet so viel wie, dass die Dinge von etwas miteinander verknüpft, angeordnet oder organisiert sind. \cite{Struct}
-Cambrige Dictionary bietet eine ähnliche Definition an. \cite {CambStruc} 
+Dies bedeutet, dass die Teile miteinander verknüpft, angeordnet oder organisiert sind. \cite{Struct}
 \newline
 In diesem Zusammenhang bedeutet Berechtigungsstruktur die Verknüpfung, Anordnung oder Organisation von Berechtigungen.
 \begin{figure}[h!]
  \centering
- \includegraphics[width=1.25\textwidth]{gfx/Picture/Struktur.PNG}
+ \includegraphics[width=1\textwidth]{gfx/Picture/Struktur.PNG}
  \caption{Teilausschnitt der Berechtigungsstruktur der Helvetia}
  \label{fig:Teil}
 \end{figure}
-Wie man in der Graphik (\ref{fig:Teil}) erkennen kann sind die Profile hierarchisch aufgebaut.
+Wie man in der Graphik (\ref{fig:Teil}) erkennen kann, sind die Profile hierarchisch aufgebaut.
 Diese Profile beinhalten die Berechtigungen.
 Daher ist die aktuelle Berechtigungsstruktur hierarchisch bei der Helvetia.
 
 
 \section{IAM}
 \label{subsec:IAM}
-Die Virginia IT Agency beschreibt IAM wie folgt, dass \ac{IAM} die Möglichkeit ist, sämtliche Nutzer und Profile, welche man zu den jeweiligen Personen über die IT-Umgebung über Nutzerrollen und Businessregeln zu ordnen kann, zu handhaben. Dabei ist die Zugriffverwaltung die Möglichkeit die Zugriffskontrolle Regeln über verschiedene Plattformen einzuhalten. Ein wichtiger Teil von \ac{IAM} dabei ist sicherzustellen, dass die Nutzer einen sicheren Zugriff auf die Ressourcen haben und auch nur die Ressourcen, die sie benötigen, um ihre Arbeit zu erledigen. \cite{Virg07}
+Die Virginia IT Agency beschreibt IAM wie folgt: Das \ac{IAM} ist eine Möglichkeit, sämtliche Nutzer und Profile, welche man zu den jeweiligen Personen über die IT-Umgebung über Nutzerrollen und Businessregeln zu ordnen kann, zu handhaben. Dabei ist die Zugriffverwaltung die Möglichkeit die Zugriffskontrolle über Regeln auf verschiedenen Plattformen einzuhalten. Ein wichtiger Teil von \ac{IAM} ist sicherzustellen, dass die Nutzer einen sicheren Zugriff auf die Ressourcen haben und auch nur auf die Ressourcen, die sie benötigen, um ihre Arbeit zu erledigen. \cite{Virg07}
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/IAM.PNG}
  \caption{Übersicht von IAM \cite{Moha19}}
  \label{fig:IAM}
 \end{figure}
-Im Bild (\ref{fig:IAM}) kann man erkennen, dass wenn ein Nutzer oder Programmzugriff auf eine Ressource möchte, dass dieser die Identifizierung, Authentifizierung, Autorisierung  sowie Rechtschaffenheit vorlegen und einhalten muss. \cite{Moha19}
+Im Bild (\ref{fig:IAM}) kann man erkennen, dass wenn ein Nutzer oder Programmzugriff auf eine Ressource möchte, dieser die Identifizierung, Authentifizierung, Autorisierung, sowie Rechtschaffenheit vorlegen und einhalten muss. \cite{Moha19}
 \newline
 Im Rahmen dieser Ausarbeitung handelt es sich bei den Ressourcen, um die Berechtigungen (\ref{sec:Berechtigung}).
