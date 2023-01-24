@@ -173,13 +173,66 @@ Manche Fachbereiche haben aufzählende Profile (\ref{fig:Profile}).
 Diese Profile sollen nur noch über die Berechtigungen für den eigenen Vorgang enhalten, sodass ein Privas Profil nur Privas Berechtigungen enthält.
 Die Berechtigung die verloren gehen würden eigene Profile bekommen und würden über ein anderes Sammelprofil dem Hauptprofil hinzugefügt werden.
 Sollte ein Nutzer weitere Berechtigungen benötigen, würden diese über ein anderes Hauptprofil, welches am ehesten für die Aufgabe passt, zugeordnet.
+Wenn ein Account reaktiviert wird, muss dieser rezertifiziert werden.
 \newline
-Diese Konventionen sollen verhindern, dass die Struktur weiter wächst und das man ohne Problem feststellen kann, was für ein Profil man hat.
+Diese Konventionen sollen verhindern, dass die Struktur weiter wächst und das man ohne Problem feststellen kann, was für Berechtigungen ein Profil man hat.
 Zudem hat es Vorteil, dass rekursive Beziehung sowie redundante Berechtigungsvergabe nicht möglich sind, da die Profile nur noch Profile oder Berechtigungen enthalten, die nicht mehr auf sich gegenseitig zeigen sollen sondern höchstens sammeln soll.
 Dadurch soll auch die Übersichlichkeit verbessert und das Hierarchie Problem auf ein Minimum gebracht werden.
 Außerdem sollte die Performance verbessert werden durch die fehlenden rekursiven Beziehungen sowie die Vereinfachung der Struktur mit der Reduktion der Berechtigungen.
+\begin{figure}[h!]
+\hspace*{-2cm}
+ \centering
+ \includegraphics[width=1.25\textwidth]{gfx/Picture/Vorher.PNG}
+ \caption{Beispiel der bestehenden Berechtigungsstruktur}
+ \label{fig:AltBer}
+\hspace*{-2cm}
+ \centering
+ \includegraphics[width=1.25\textwidth]{gfx/Picture/Nachher.PNG}
+ \caption{Beispiel der neuen Berechtigungsstruktur}
+ \label{fig:NeuBer}
+\end{figure}
+\newpage
+Das Bild (\ref{fig:AltBer}) zeigt eine bestehende Berechtigungsstruktur.
+(\ref{fig:AltBer}) hingegen bildet die Struktur nach den neuen Konventionen dar.
+Diese beide Bilder wurden denselben IT-Spezialisten gezeigt, die befragt wurden.
+Einheitlich haben alle befragten IT-Spezialisten angegeben, dass Sie die neue Struktur übersichtlicher und einfacher zu verstehen ist.
+Zudem kann man auch erkennen, dass die Hierarchie verringert wurde.
 \newline
-[Mehr Text über log(o), sobald ich ne Quelle habe]
+Das aktuelle Verfahren, das verwendet wird um die Berechtigung zu überprüfen gleicht einem Insertion-Sort.
+Dabei durch jedes einzelne Profil durch gegagen bis die gewünsche Berechtigungen gefunden wurde.
+Dies weißt eine Komplexität von n im Optimalfall und $n^2$ im schlimmsten Falle auf.
+n beschreibt dabei, die Anzahl von Profilen/Berechtigungen, die der Algorithmus durchlaufen muss. \cite{weblogIn,log} (S. 12)
+\newline
+Bei der neuen Struktur kann ein Merge-Sort genutzt werden.
+Dabei würde der Algorithmus auf bestimmte Eigenschaften der Profile achten.
+Würde zum Beispiel verlangt werden, ob der Nutzer eine Berechtigung für PNE10 hat, würde nur der Baum von PNE durchsucht werden und in diesem Falle direkt PNE10 ausgewählt werden.
+Dieser Suchalgorithmus ist komplexer als der Insertion-Sort, ist jedoch deutlich effizienter bei einer größeren Menge von Profilen und Berechtigungen.
+Dessen Komplexität beläuft n*log(n) im besten sowie im schlechtesten Fall. \cite{weblogMer,log} (S. 12)
+\newline
+Wenn beispielsweise n = $100$ wäre, würden die Ergebnisse wie folgt aussehen:
+\newline
+\newline
+Best-Case(Insert) = $100$
+\newline
+Worst-Case(Insert) = $100^2 = 10.000$
+\newline
+\newline
+Best-Case(Merge) = $100*log(100) = 200$
+\newline
+Worst-Case(Merge) = $100*log(100) = 200$
+\newline
+\newline
+Wie man erkennen kann ist der neue Algorithmus langsamer im Best-Case, aber deutlich schneller im Worst-Case und bietet allgemein eine konsistente Zeit, welche für eine Versicherung wichtig ist.
+Wenn man den Durchschnitt bestimmt bekommt man folgende Zahlen:
+\newline
+\newline
+Average(Insert) = $100 + 10.000 / 2 = 5.050$
+\newline
+\newline
+Average(Merge) = $200 + 200 / 2 = 200$
+\newline
+\newline
+Man kann erkennen, dass im Durchschnitt die neue Struktur mit dem Merge-Sort deutlich effektiver ist als die bestehende Struktur.
 
 \section{Konzept Minimalistisch}
 \label{sec:chapter04:minimal}
