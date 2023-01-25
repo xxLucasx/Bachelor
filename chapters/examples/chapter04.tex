@@ -149,7 +149,7 @@ Anhand dieser Reihenfolge werden die folgenden Konzepte entwickelt.
  \label{fig:Prio}
 \end{figure}
 
-\section{Konzept Struktur}
+\section{Konzept Hierarchische Struktur}
 \label{sec:chapter04:Struktur}
 Das erste Konzept Struktur ist wie folgt aufgebaut.
 \begin{figure}[h!]
@@ -160,7 +160,8 @@ Das erste Konzept Struktur ist wie folgt aufgebaut.
 \end{figure}
 Wie man in der Graphik (\ref{fig:Teil}) erkennen kann, gibt es bei der aktuellen Berechtigungsstruktur keine Struktur.
 Um dementsprechend die genannten Problem zu beheben wurde die neue Struktur (\ref{fig:Struktur}) entwickelt.
-Um die \ac{K/W} wurden die folgenden Konvention für dieses Konzept entwickelt.
+Um die \ac{K/W} zu verbessern wurden die folgenden Konvention für dieses Konzept entwickelt.
+Anzumerken dabei ist, dass es trotzdem ein Aufwand ist, diese durchzusetzen und zu implementieren.
 Profile enthalten nur noch Profile oder Berechtigungen.
 Die Berechtigungsstruktur soll nur noch ein Hierarchietiefe von maximal vier haben.
 Die erste Hierarchiestufe enthält das Standardprofil, welche dem Nutzer gegeben wird.
@@ -233,10 +234,56 @@ Average(Merge) = $100*log(100) = 200$
 \newline
 \newline
 Man kann erkennen, dass im normalen Falle die neue Struktur mit dem Merge-Sort deutlich effektiver ist als die bestehende Struktur.
-Diese würde durchschnittlich 50 mal effektiver sein.
-
+Diese würde durchschnittlich $50$ mal effektiver sein.
+\newpage
 \section{Konzept Minimalistisch}
 \label{sec:chapter04:minimal}
-Aliquam ut pretium lectus. Curabitur in eros et sapien aliquet luctus ut sit amet eros. Proin et libero non mi venenatis aliquet at sed lorem. Ut sed enim mi, id viverra eros. Cras metus ante, placerat id commodo at, molestie non libero. Aenean eu risus erat, vel consequat metus. Sed malesuada metus sit amet nisl viverra hendrerit.
-
-
+Im Gespräch der IT-Spezialisten kam der Vorschlag auf, dass man einen minimalistischen Ansatz nutzen könnte.
+Dabei haben diese folgende Vorschläge für die Konventionen gemacht:
+\newline
+Profile enthalten nur noch Profile oder Berechtigungen.
+Standardprofile für die jeweiligen Abteilungen entwickeln.
+Zusätzliche Berechtigungen werden dem Nutzer direkt zu geordnet.
+Wenn ein Account reaktiviert wird, muss dieser rezertifiziert werden.
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{gfx/Picture/Minimal.PNG}
+ \caption{Beispiel für das Konzept Minimalistisch}
+ \label{fig:Min}
+\end{figure}
+Die IT-Spezialisten fanden auch, dass dies übersichtlicher als die bestehende Struktur ist.
+Dieses Konzept hat den Vorteil, dass es kaum noch eine Hierarchie gibt.
+Dadurch entfällt das Problem der Rekursion sowie redundante Berechtigungsvergabe.
+Die \ac{K/W} ist einfacher in diesem Sinne, da nur überprüft werden muss, ob die Standardprofile über die notwendigen Berechtigungen verfügen.
+Auf der anderen Seite ist die Entwicklung aufwendig, da erstmal bestimmt werden muss, welche Berechtigungen notwendig für einen Fachbereich sind, sowie muss sicher gestellt werden, dass alle Nutzer ihre Berechtigungen beibehalten.
+Es besteht nämlich die Gefahr, dass bei dem Wechsel Berechtigungen verloren gehen.
+\newline
+\newline
+Wenn man (\ref{fig:Min}) betrachtet, kann für diese Struktur nur ein Insertion-Sort verwendet werden.
+Dies liegt, dass der Sort die individuellen Einträge durchlesen muss, da es keine Andeutung gibt, wo welche Berechtigung ist.
+Die aktuelle Struktur verwendet auch einen Insertion-Sort, aufgrund des gleichen Problemes.
+Jedoch ist zu bemerken, dass die Anzahl der n bei diesem Konzept geringer ist, da es nicht die verschiedenen Profilen mit redundanten gibt.
+\newline
+\newline
+Ein Hauptprofil hatte zum Beispiel $110$ Profile mit Berechtigungen enthalten.
+Von diesen $110$ waren $78$ redundante Profile.
+Da Profile eine Ansammlung von Berechtigungen sind, ist die Anzahl von redundanten Berechtigungen deutlich höher.
+Wenn man nur den Unterschied zwischen der bestehenden Struktur mit der minimalistischen Struktur macht, erhält man folgenden Vergleich:
+\newline
+\newline
+Best-Case(Alte Struktur) = $110$
+\newline
+Worst-Case(Insert) = $110^2 = 12.100$
+\newline
+Average(Insert) = $110^2 = 12.100$
+\newline
+\newline
+Best-Case(Neue Struktur) = $32$
+\newline
+Worst-Case(Neue Struktur) = $32^2 = 1.024$
+\newline
+Average(Neue Struktur) = $32^2 = 1.024$
+\newline
+\newline
+Man kann feststellen, dass obwohl die neue Struktur nicht über einen effizienteren Algorithmus verfügt, dieser trotzdem eine bessere Performance hat.
+Dieser wäre in diesem Beispiel ca. $12$ mal performanter als die bestehende Struktur.
