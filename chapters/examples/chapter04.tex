@@ -3,7 +3,7 @@
 In diesem Kapitel wird darauf eingegangen, wie vorgegangen wurde, um verschiedene Konzepte zu entwickeln.
 Dabei werden die vorher erwähnten Befragungen (\ref{ch:Recherche}) verwendet, um eine Lösung für die individuellen Probleme zu entwickeln.
 Zudem wird der Stand der Technik betrachtet und ein Vergleich mit den Datenbankstrukturen gezogen.
-Dies wird getan, da diese eine ähnliche Struktur wie die Profile und Berechtigungen. \textbf{\textcolor[rgb]{1,0,0}{Dies ist für mich kein verständlicher Satz.}}
+Dies wird getan, da Datenbanken eine ähnliche Struktur, wie die Berechtigungsstruktur der Helvetia, haben. 
 Anschließend werden die Probleme aus den Befragungen quantifiziert, um daraus dann die verschiedenen Konzepte zu entwickeln.
 
 
@@ -78,7 +78,7 @@ Deswegen gibt es nicht die eine Lösung, um eine solche Herausforderung zu löse
 \label{sec:chapter04:DB}
 Die Helvetia verwendet zum Speichern der Informationen für die Berechtigungsstruktur sogenannte HV-Tabellen.
 Bei diesen HV-Tabellen handelt es sich, um DB2-Tabellen.
-Zudem besteht eine Ähnlichkeit zwischen dem Nutzer und Profil in der Berechtigungsstruktur zu dem Account und Gruppe in Datenbanken. \textbf{\textcolor[rgb]{1,0,0}{Der Satz ist für mich so nicht verständlich.}}
+Zudem besteht eine Ähnlichkeit zwischen dem Nutzer und dem Profil in der Berechtigungsstruktur im Vergleich zum Account und der Gruppe in Datenbanken. \textbf{\textcolor[rgb]{1,0,0}{Der Satz ist für mich so nicht verständlich.}}
 Deswegen wird betrachtet, wie der Standard von Accounts und Gruppen innerhalb von Datenbanken ist.
 \newline
 Berechtigungen für Rollen werden mittels GRANT...ON...TO...[GRANT OPTION] vergeben.
@@ -104,7 +104,9 @@ You can then add and remove users from the groups without accessing the Master D
 Do not assign additional permissions to an individual user, and do not include a user in multiple groups that have access to Master Data Manager. In addition, do not use hierarchy member permissions unless you want a group to have limited access to specific members."'} \cite{Micro}
 \newline
 \newline
-Microsoft gibt an, dass man Gruppen erstellen, die individuellen Nutzer keine zusätzlichen Berechtigungen bekommen sollen und nicht in mehreren Gruppen sein soll, die Zugriff auf den Master Data Manager haben. \textbf{\textcolor[rgb]{1,0,0}{Dies ist für mich kein verständlicher Satz.}}
+Microsoft gibt an, dass man Gruppen erstellen soll.
+Die individuellen Nutzer sollen dabei keine zusätzlichen Berechtigungen bekommen.
+Ebenso ist es wichtig, dass diese nicht in mehreren Gruppen sind, welche Zugriff auf den Master Data Manager haben.
 Und auch IBM gibt in seiner Best Practice an, dass Angestellte in einem Unternehmen mittels Gruppen organisiert werden sollten. \cite{IBMGroup}
 
 \section{Herausforderung und Anforderungen}
@@ -162,21 +164,21 @@ Wie man in der Graphik (\ref{fig:Teil}) erkennen kann, gibt es bei der aktuellen
 Um dementsprechend die genannten Problem zu beheben, wurde die neue Struktur (\ref{fig:Struktur}) entwickelt.
 Um die \ac{K/W} zu verbessern, wurden die folgenden Konventionen für dieses Konzept entwickelt.
 Anzumerken dabei ist, dass es trotzdem ein Aufwand ist, diese durchzusetzen und zu implementieren.
-\textbf{\textcolor[rgb]{1,0,0}{Das Folgende ist für mich eine Aufzählung }}
-Profile enthalten nur noch Profile oder Berechtigungen.
-Die Berechtigungsstruktur soll nur noch eine Hierarchietiefe von maximal vier haben.
-Die erste Hierarchiestufe enthält das Standardprofil, welche dem Nutzer gegeben wird.
-Die zweite Hierarchiestufe enthält die jeweiligen Sammellese- und -schreibprofile, die jeweils in die Fachbereiche getrennt sind.
-Die dritte Hierarchiestufe enthält die individuellen Lese- und Schreibprofile.
-Die vierte Stufe enthält die Berechtigungen.
-Manche der bestehenden Profile beinhalten aktuell, was zukünftig Hauptprofile wären.
+\begin{itemize}
+	\item Profile enthalten nur noch Profile oder Berechtigungen.
+	\item Die Berechtigungsstruktur soll nur noch eine Hierarchietiefe von maximal vier haben.
+	\item Die erste Hierarchiestufe enthält das Standardprofil, welche dem Nutzer gegeben wird.
+	\item Die zweite Hierarchiestufe enthält die jeweiligen Sammellese- und -schreibprofile, die jeweils in die Fachbereiche getrennt sind.
+	\item Die dritte Hierarchiestufe enthält die individuellen Lese- und Schreibprofile.
+	\item Die vierte Stufe enthält die Berechtigungen.
+	\item Manche der bestehenden Profile beinhalten aktuell, was zukünftig Hauptprofile wären.
 In solchen Fällen würden diese Profile zu Hauptprofilen werden und vom vorherigen Hauptprofil separiert werden.
-Manche Fachbereiche haben aufzählende Profile (\ref{fig:Profile}).
+	\item Manche Fachbereiche haben aufzählende Profile (\ref{fig:Profile}).
 Diese Profile sollen nur noch über die Berechtigungen für den eigenen Vorgang enthalten, sodass ein Privas Profil nur Privas Berechtigungen enthält.
 Die Berechtigung die verloren gehen würden eigene Profile bekommen und würden über ein anderes Sammelprofil dem Hauptprofil hinzugefügt werden.
-Sollte ein Nutzer weitere Berechtigungen benötigen, würden diese über ein anderes Hauptprofil, welches am ehesten für die Aufgabe passt, zugeordnet.
-Wenn ein Account reaktiviert wird, muss dieser rezertifiziert werden.
-\newline
+	\item Sollte ein Nutzer weitere Berechtigungen benötigen, würden diese über ein anderes Hauptprofil, welches am ehesten für die Aufgabe passt, zugeordnet.
+	\item Wenn ein Account reaktiviert wird, muss dieser rezertifiziert werden.
+\end{itemize}
 Diese Konventionen sollen verhindern, dass die Struktur weiter wächst und das man ohne Probleme feststellen kann, was für Berechtigungen ein Profil hat.
 Zudem hat es den Vorteil, dass rekursive Beziehungen, sowie redundante Berechtigungsvergabe nicht möglich sind, da die Profile nur noch Profile oder Berechtigungen enthalten, die nicht mehr auf sich gegenseitig zeigen.
 Dadurch soll auch die Übersichtlichkeit verbessert und das Hierarchieproblem auf ein Minimum gebracht werden.
@@ -195,7 +197,7 @@ Außerdem sollte die Performance verbessert werden. Dies durch die fehlenden rek
 \end{figure}
 \newpage
 Das Bild (\ref{fig:AltBer}) zeigt eine bestehende Berechtigungsstruktur.
-(\ref{fig:AltBer}) hingegen bildet die Struktur nach den neuen Konventionen dar.
+(\ref{fig:NeuBer}) hingegen bildet die Struktur nach den neuen Konventionen dar.
 Diese beide Bilder wurden den IT-Spezialisten gezeigt, die befragt wurden.
 Einheitlich haben alle befragten IT-Spezialisten angegeben, dass Sie die neue Struktur übersichtlicher finden und diese einfacher zu verstehen ist.
 Zudem kann auch erkannt werden, dass die Hierarchie verringert wurde.
@@ -242,10 +244,12 @@ Diese würde durchschnittlich $50$ mal effektiver sein.
 Im Gespräch der IT-Spezialisten kam der Vorschlag auf, dass man einen minimalistischen Ansatz nutzen könnte.
 Dabei haben die IT-Spezialisten folgende Vorschläge für die Konventionen gemacht:
 \newline
-Profile enthalten nur noch Profile oder Berechtigungen.
-Es werden Standardprofile für die jeweiligen Abteilungen entwickelt.
-Zusätzliche Berechtigungen werden dem Nutzer direkt zu geordnet.
-Wenn ein Account reaktiviert wird, muss dieser rezertifiziert werden.
+\begin{itemize}
+	\item Profile enthalten nur noch Profile oder Berechtigungen.
+	\item Es werden Standardprofile für die jeweiligen Abteilungen entwickelt.
+	\item Zusätzliche Berechtigungen werden dem Nutzer direkt zu geordnet.
+	\item Wenn ein Account reaktiviert wird, muss dieser rezertifiziert werden.
+\end{itemize}
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/Minimal.PNG}
