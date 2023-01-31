@@ -84,6 +84,21 @@ In diesem Zusammenhang bedeutet Berechtigungsstruktur die Verknüpfung, Anordnun
 \end{figure}
 Wie man in der Graphik (\ref{fig:Teil}) erkennen kann, sind die Profile hierarchisch aufgebaut.
 Diese Profile beinhalten die Berechtigungen.
+\begin{figure}[h!]
+\hspace*{-4cm}
+ \centering
+ \includegraphics[width=1.6\textwidth]{gfx/Picture/Ber.PNG}
+ \caption{Berechtigungen für die Profile PGE$20$ und PGE$30$}
+ \label{fig:Ber}
+\end{figure}
+\newpage
+Die Grafik (\ref{fig:Ber}) zeigt, dass die Profile PGE$20$ und PGE$30$ zum Beispiel über die folgenden Berechtigungen verfügen:
+\begin{itemize}
+	\item DM$00$
+	\item GEEA
+	\item GEVA
+	\item GE$20$
+\end{itemize}
 Daher ist die aktuelle Berechtigungsstruktur hierarchisch bei der Helvetia.
 
 
@@ -97,5 +112,9 @@ Die Virginia IT Agency beschreibt IAM wie folgt: Das \ac{IAM} ist eine Möglichk
  \label{fig:IAM}
 \end{figure}
 Im Bild (\ref{fig:IAM}) kann man erkennen, dass wenn ein Nutzer oder Programm Zugriff auf eine Ressource möchte, dieser die Identifizierung, Authentifizierung, Autorisierung, sowie Rechtschaffenheit vorlegen und einhalten muss. \cite{Moha19}
+Beispielsweise wenn der Nutzer Lucas Stumm Daten vom Host haben möchte, muss dieser durch verschiedene Schritte gehen.
+Als erstes muss sich dieser Identifizieren mittels eines Nutzernamens und Passwort.
+Während dieser sich durch die Menüs manövriert hat, wird überprüft, ob Lucas Stumm überhaupt die Berechtigungen hat, diese Menüs sehen und auswählen zu können.
+Wenn dies der Fall ist, kann der Nutzer auf die Daten zugreifen.
 \newline
 Im Rahmen dieser Ausarbeitung handelt es sich bei den Ressourcen, um die Berechtigungen (\ref{sec:Berechtigung}).
