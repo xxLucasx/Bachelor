@@ -78,7 +78,7 @@ Deswegen gibt es nicht die eine Lösung, um eine solche Herausforderung zu löse
 \label{sec:chapter04:DB}
 Die Helvetia verwendet zum Speichern der Informationen für die Berechtigungsstruktur sogenannte HV-Tabellen.
 Bei diesen HV-Tabellen handelt es sich, um DB2-Tabellen.
-Zudem besteht eine Ähnlichkeit zwischen dem Nutzer und dem Profil in der Berechtigungsstruktur im Vergleich zum Account und der Gruppe in Datenbanken. \textbf{\textcolor[rgb]{1,0,0}{Der Satz ist für mich so nicht verständlich.}}
+Zudem besteht eine Ähnlichkeit zwischen dem Nutzer und dem Profil in der Berechtigungsstruktur im Vergleich zum Account und der Gruppe in Datenbanken.
 Deswegen wird betrachtet, wie der Standard von Accounts und Gruppen innerhalb von Datenbanken ist.
 \newline
 Berechtigungen für Rollen werden mittels GRANT...ON...TO...[GRANT OPTION] vergeben.
@@ -113,12 +113,14 @@ Und auch IBM gibt in seiner Best Practice an, dass Angestellte in einem Unterneh
 \label{sec:chapter04:Herausforderung}
 Bei der Recherche (\ref{ch:Recherche}) sind verschiedene Herausforderungen und Anforderungen aufgetreten.
 Um qualitativ ein Konzept entwickeln zu können, müssen diese Herausforderungen und Anforderungen aufgelistet und analysiert werden.
+Neben den genannten Punkten wurde der Punkte Implementierung hinzugefügt, da diese bei der Entscheidung der Konzepte elementar ist, da dass Unternehmen sich im Klaren sein muss, wie viele Ressourcen das neue Konzept kostet sowie der Punkt der Performance, da eine bessere Performance immer gut.
 \begin{itemize}
-	\item Performance der Tabellen erhöhen (effizientere Verifizierung der Mitarbeiter)
-	\item Übersichtlicher gestalten
+	\item Performance der Tabellen erhöhen 
+	\item Übersichtlicher gestalten (effizientere Verifizierung der Mitarbeiter)
 	\item Rekursive Beziehungen verhindern
 	\item Hierarchie verringern
 	\item \ac{K/W}
+	\item Implementierung
 \end{itemize}
 Um diese zu quantifizieren zu können, wird eine Prioritätsanalyse (\ref{fig:Prio}) verwendet, um festzustellen, wie die Priorität für die Konzepte sein muss. \cite{BdIufH}
 Bei der Prioritätsanalyse wurde sich für ein vier Punktesystem entschieden.
@@ -135,18 +137,19 @@ Zwischen der Übersichtlichkeit und der Rekursion wurden der Rekursion drei Punk
 Die Rekursion bekommt zur Hierarchie vier Punkte und die Hierarchie zur Rekursion null Punkte, da eine rekursive Beziehung die Hierarchie automatisch unendlich macht.
 \newline
 \newline
-Wenn man dies auswertet, bekommt die Performance einen Gewichtsfaktor von 27,5\%, die Übersichtlichkeit 12,5\%, die Rekursion 25\%, die Hierarchie 7,5\% und \ac{K/W} 27,5\%.
+Wenn man dies auswertet, bekommt die Performance einen Gewichtsfaktor von 16,66667\%, die Übersichtlichkeit 20\%, die Rekursion 18,33333\%, die Hierarchie 6,66667\%, die \ac{K/W} 18,33333\% und Implementierung 20\%.
 Dadurch sieht die Rangfolge wie folgt aus:
 \begin{enumerate}
-	\item Performance | \ac{K/W}
-	\item Rekursion
-	\item Übersichtlichkeit
+	\item Implementierung | Übersichtlichkeit
+	\item Rekursion | \ac{K/W}
+	\item Performance
 	\item Hierarchie
 \end{enumerate}
 Anhand dieser Reihenfolge werden die folgenden Konzepte entwickelt.
 \begin{figure}[h!]
+\hspace*{-2cm}
  \centering
- \includegraphics[width=1\textwidth]{gfx/Picture/Prioritatätsanalyse.PNG}
+ \includegraphics[width=1.25\textwidth]{gfx/Picture/Prioritatätsanalyse.PNG}
  \caption{Prioritätsanalyse der Kriterien}
  \label{fig:Prio}
 \end{figure}
@@ -176,7 +179,7 @@ In solchen Fällen würden diese Profile zu Hauptprofilen werden und vom vorheri
 	\item Manche Fachbereiche haben aufzählende Profile (\ref{fig:Profile}).
 Diese Profile sollen nur noch über die Berechtigungen für den eigenen Vorgang enthalten, sodass ein Privas Profil nur Privas Berechtigungen enthält.
 Die Berechtigung die verloren gehen würden eigene Profile bekommen und würden über ein anderes Sammelprofil dem Hauptprofil hinzugefügt werden.
-	\item Sollte ein Nutzer weitere Berechtigungen benötigen, würden diese über ein anderes Hauptprofil, welches am ehesten für die Aufgabe passt, zugeordnet.
+	\item Sollte ein Nutzer weitere Berechtigungen benötigen, würden diese direkt ihm zugewiesen werden.
 	\item Wenn ein Account reaktiviert wird, muss dieser rezertifiziert werden.
 \end{itemize}
 Diese Konventionen sollen verhindern, dass die Struktur weiter wächst und das man ohne Probleme feststellen kann, was für Berechtigungen ein Profil hat.
@@ -195,7 +198,6 @@ Außerdem sollte die Performance verbessert werden. Dies durch die fehlenden rek
  \caption{Beispiel der neuen Berechtigungsstruktur}
  \label{fig:NeuBer}
 \end{figure}
-\newpage
 Das Bild (\ref{fig:AltBer}) zeigt eine bestehende Berechtigungsstruktur.
 (\ref{fig:NeuBer}) hingegen bildet die Struktur nach den neuen Konventionen dar.
 Diese beide Bilder wurden den IT-Spezialisten gezeigt, die befragt wurden.
@@ -238,6 +240,40 @@ Average(Merge) = $100*log(100) = 200$
 \newline
 Man kann erkennen, dass im normalen Falle die neue Struktur mit dem Merge-Sort deutlich effektiver ist als die bestehende Struktur.
 Diese würde durchschnittlich $50$ mal effektiver sein.
+\newline
+\newline
+Die Entwicklung dieses Konzeptes ist aufwendig und komplex.
+Es gibt dabei zwei Möglichkeiten wie dieses umgesetzt werden kann.
+Die erste Möglichkeit besteht dabei, dass sich eine Gruppe von Entwicklern an die bestehende Struktur setzen, eine Kopie davon erstellen und anhand der Kopie die neue Struktur erstellen.
+Dies ist jedoch Zeit aufwendig und es besteht ein hohes Potenzial, dass Fehler geschehen durch nachlässiges Arbeiten.
+\newline
+Die zweite Möglichkeit wäre eine Algorithmus zu schreiben, welcher dies automatisiert.
+Da weder die Zeit besteht noch die entsprechende Umgebung zum Testen eines Prototypen, kann die Entwicklung des Algorithmus innerhalb dieser Arbeit nur mittels von Pseudocode stattfinden.
+Dabei würde die Automatisierung wie folgt aussehen.
+\newline
+\newline
+\textbf{Algorithmus} conversionToNewStructure(DB$2$ T)
+\newline
+\newline
+\textbf{Input} Eine DB2 Tabelle T, welche die Struktur enthält
+\newline
+\newline
+\textbf{Output} Neu DB2 Tabelle T, welches die neue Struktur von Profilen enthält.
+\newline
+\newline
+Der Algorithmus muss dabei die Profile in zwei Kategorien aufteilen:
+\begin{itemize}
+	\item Standardprofil
+	\item Lese-/Schreibeprofil
+\end{itemize}
+Für die Standardprofile werden die Profile überprüft, die viele Unterprofile haben.
+Wenn ein Profil X Y viele Unterprofile hat, wird dieses zu einem Standardprofil.
+Die restlichen Profile werden zu Lese-/Schreibeprofile.
+Die individuellen Sammelprofile werden basierend auf den Lese-/Schreibeprofile generiert.
+Die Verbindungen zwischen den bisherigen Profilen wird aufgebrochen und zu den neuen Sammelprofilen zu gewiesen, welche mit dem Standardprofil verbunden sind.
+Anschließend werden auf redundante Profile und Berechtigungen überprüft, welche dann entfernt werden.
+Dabei muss man aber zum Schluss begutachten, ob alle generierten Standardprofile wirklich Standardprofile sein sollten sowie ob die bestehende Anzahl ausreichend ist.
+
 \newpage
 \section{Konzept Minimalistisch}
 \label{sec:chapter04:minimal}
@@ -247,6 +283,7 @@ Dabei haben die IT-Spezialisten folgende Vorschläge für die Konventionen gemac
 \begin{itemize}
 	\item Profile enthalten nur noch Profile oder Berechtigungen.
 	\item Es werden Standardprofile für die jeweiligen Abteilungen entwickelt.
+	\item Nutzer, die in verschiedenen Abteilungen operieren erhalten, die jeweiligen Standardprofile.
 	\item Zusätzliche Berechtigungen werden dem Nutzer direkt zu geordnet.
 	\item Wenn ein Account reaktiviert wird, muss dieser rezertifiziert werden.
 \end{itemize}
@@ -292,3 +329,27 @@ Average(Neue Struktur) = $32^2 = 1.024$
 \newline
 Man kann feststellen, dass obwohl die neue Struktur nicht über einen effizienteren Algorithmus verfügt, dieser trotzdem eine bessere Performance hat.
 Die neue Struktur wäre in diesem Beispiel ca. $12$ mal performanter als die bestehende Struktur.
+\newline
+\newline
+Ebenso kann für dieses Konzept eine manuelle Lösung verwendet werden sowie eine automatische.
+Wie im vorherigen Fall kann eine Kopie vom vorherigen Konzept erstellt werden, welches dann in das neue ummodelliert wird.
+Jedoch wird der Prozess der individuellen Berechtigungsvergabe zu den einzelnen Nutzern Zeitaufwendig sein.
+Dabei können auch Berechtigungen verloren gehen und dies wäre ein Problem.
+\newline
+Als Alternative kann ein Algorithmus verwendet werden.
+Dieser ist dem vorherigen in der Grundstrucktur gleich:
+\newline
+\newline
+\textbf{Algorithmus} conversionToNewStructure(DB$2$ T)
+\newline
+\newline
+\textbf{Input} Eine DB2 Tabelle T, welche die Struktur enthält
+\newline
+\newline
+\textbf{Output} Neu DB2 Tabelle T, welches die neue Struktur von Profilen enthält.
+\newline
+\newline
+Der Algorithmus würde die komplette bisherige Struktur auseinander brechen.
+Anschließened werden die Standardprofile anhand der Fachbereiche neu geformt und den Nutzern der jeweiligen Bereiche zugewiesen.
+Die bisherigen Berechtigungen werden anschließend den Nutzern direkt angehängt.
+Redundate Berechtigungen werden entfernt.
