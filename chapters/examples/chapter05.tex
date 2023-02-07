@@ -6,9 +6,6 @@ Dabei werden die Ergebnisse der Prioritätsanalyse verwendet und basierend mit d
 Das Konzept mit einem höheren Wert erfüllt mehr die Kriterien als das andere.
 Zum Abschluss wird die alternative racF begutachtet auf ihre Vor und Nachteile.
 
-\section{ABC-Analyse}
-\label{sec:chapter05:Anal}
-
 \section{Nutzwertanalyse}
 \label{sec:chapter05:Nutz}
 Für die Nutzwertanalyse müssen die jeweiligen \ac{TN} bestimmt werden.
@@ -118,7 +115,51 @@ Auf der anderen Seite ist jedoch die Verbesserung der Performance ist nicht stab
 Die Implementierung ist im Verhältnis zum Hierarchische Struktur Konzept deutlich einfacher, da für jeden Fachbereich die Standardprofil entwickelt werden müssen und ansonsten die restlichen Berechtigungen direkt an die Nutzer zu geteilt werden und keine neuen Profile entwickelt werden müssen.
 Jedoch besteht die Gefahr, dass bei der Menge von Berechtigungen gewisse Nutzer bestehende verlieren.
 
-\section{Ablösung ins racF}
+\section{Ablösung ins RACF}
 \label{sec:chapter05:racF}
-Donec gravida consequat arcu, et mollis tortor posuere vitae. Sed pharetra turpis a ante commodo accumsan. Suspendisse leo nulla, accumsan sit amet dapibus in, posuere eget turpis. Vivamus enim sapien, porta id placerat eget, laoreet sed massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
+Neben dem aktuellen DB$2$ Tabellen Modell ist auch intern der Gedanke gekommen, dass die bestehende Struktur in das \ac{RACF} ausgelagert werden kann.
+Den die Helvetia verwendet aktuell schon \ac{CICS} von IBM für die Kommunikation der internen Prozesse.
+Dabei wird auch das \ac{RACF} verwendet, weswegen überlegt wurde, ob nicht die DB$2$ Tabellen ebenso in diese Umgebung integriert werden soll.
+Das hätte den Vorteil, das sämtlich Prozess an einem Ort stattfinden und daher die Suche nach etwas vereinfacht ist.
+Zudem würde man sich von der Welt des Hosts weiter distanzieren.
+Dies wäre ein positive Aspekt, wenn das Unternehmen sich vom Host lösen möchte in der Zukunft.
+\newline
+\newline
+Für die Wechsel zwischen der DB2 Tabelle zu \ac{RACF} würden die Profile, Nutzer und Berechtigungen wie folgt geändert werden:
+\begin{itemize}
+	\item Die HDM-Vorgangsprofile werden mittels Data Control Groups dargestellt
+	\item Die Berechtigungen werden durch General Resource Profiles abgebildet
+	\item Die Nutzer werden anhand von Holding Group verkörpert
+\end{itemize}
+Die Data Control Groups fungieren als ein Schnittpunkt für die Daten, welche vor nicht autorisierten Zugriff geschützt werden soll. \cite{IBMdcg}
+Die General Resource Profiles bieten einen Schutz an für Computer Resourcen sowie andere Datenformate wie zum Beispiel Berechtigungen. \cite{IBMgrp}
+Die Nutzer werden als Holding Group dargestellt, da diese den Nutzer in das bestehende System integriert, aber dieser kaum Berechtigungen wodurch dieser keinen Zugriff auf die Berechtigungen hat.
+Dies muss über einen Administator, welcher über die CONNECT Autorität verfügt, verwaltet werden, damit der Nutzer seine Berechtigungen erhält. \cite{IBMhg}
+\newline
+\newline
+Auf der anderen Seite bestehen jedoch die folgenden Probleme:
+\begin{itemize}
+	\item Bestehende Schnittstellen
+	\item Transfer der Daten
+	\item Schulung des Personals
+\end{itemize}
+Die aktuelle DB$2$ Tabelle verfügt über verschiedene Schnittstellen für die Abfrage von Berechtigungen.
+Wenn diese durch das \ac{RACF} ersetzt werden sollen, müssen diese durch neue Schnittstellen ersetzt werden.
+Im Gespräch mit den IT-Spezialisten wurde gesagt, dass dies ein großes Problem aufweißt, da dafür ein spezielle \ac{API} entwickelt werden müsste.
+Dies würde neben dem normalen Wechsel von den DB$2$ Tabellen zu \ac{RACF} für weitere Geldkosten sorgen.
+\newline
+Ein anderes Problem ist auch der Transfer der bestehenden Daten in das \ac{RACF}.
+Für diesen Prozess müsste auch eine Schnittstelle entwickelt werden, welche bei dem Transfer die Daten in das richtige Dateiformate transformiert.
+Neben den steigenden Kosten bestehen auch das Risiko, dass bei der Transformation ein Fehler geschieht.
+\newline
+Selbst wenn die vorherigen beiden Punkte kein Problem darstellen, muss dennoch das gesamte Personal, welches mit den Tabellen gearbeitet hat für das \ac{RACF} geschult werden.
+Dies würde wieder Geld kosten sowie Zeit.
+Aufgrund dieser Faktoren ist der Wechsel in das \ac{RACF} nicht Ratsam, da zu viele große Probleme bestehen, welche Geld sowie Zeit kosten werden.
+\newline
+Sollte jedoch sich doch für das \ac{RACF} entschieden werden, würde der Algorithmus wie folgt aussehen:
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{gfx/Picture/racf.PNG}
+ \caption{Algorithmus für den Wechsel zu RACF}
+ \label{fig:racf}
+\end{figure}
