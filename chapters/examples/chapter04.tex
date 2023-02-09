@@ -108,6 +108,12 @@ Microsoft gibt an, dass man Gruppen erstellen soll.
 Die individuellen Nutzer sollen dabei keine zusätzlichen Berechtigungen bekommen.
 Ebenso ist es wichtig, dass diese nicht in mehreren Gruppen sind, welche Zugriff auf den Master Data Manager haben.
 Und auch IBM gibt in seiner Best Practice an, dass Angestellte in einem Unternehmen mittels Gruppen organisiert werden sollten. \cite{IBMGroup}
+\newline
+Dies ist jedoch in der Praxis schwierig umzusetzen.
+Im Idealfall benötigt jeder Mitarbeiter ein oder zwei Standardprofil, welche dem Nutzer alle Berechtigungen geben.
+Dies ist aber selten der Fall, da die Nutzer nach zum Beispiel einem halben Jahr an einem anderen Projekt arbeiten und daher andere Berechtigungen benötigen.
+Wenn man für jeden solchen Fall ein neues Standardprofil erstellt, werden diese unübersichtlich und das Konzept im mit den Standardprofilen würde in Frage kommen, wenn die Anzahl dieser der Anzahl der Berechtigungen gleicht.
+Dennoch sollte es versucht werden, dass Nutzer so wenig zusätzliche Berechtigunen wie möglich bekommen, um Best Practice Standards einzuhalten. 
 
 \section{Herausforderung und Anforderungen}
 \label{sec:chapter04:Herausforderung}
@@ -276,7 +282,7 @@ Dabei muss man aber zum Schluss begutachten, ob alle generierten Standardprofile
 Die Grafik (\ref{fig:Hier}) stellt dies als ein Ablaufdiagram dar.
 \begin{figure}[h!]
  \centering
- \includegraphics[width=0.99\textwidth]{gfx/Picture/Hier.PNG}
+ \includegraphics[width=0.77\textwidth]{gfx/Picture/Hier.PNG}
  \caption{Ablaufdiagram für das hierarchische Struktur Konzept}
  \label{fig:Hier}
 \end{figure}
