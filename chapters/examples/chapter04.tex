@@ -3,7 +3,7 @@
 In diesem Kapitel wird darauf eingegangen, wie vorgegangen wurde, um verschiedene Konzepte zu entwickeln.
 Dabei werden die vorher erwähnten Befragungen (\ref{ch:Recherche}) verwendet, um eine Lösung für die individuellen Probleme zu entwickeln.
 Zudem wird der Stand der Technik betrachtet und ein Vergleich mit den Datenbankstrukturen gezogen.
-Dies wird getan, da Datenbanken eine ähnliche Struktur, wie die Berechtigungsstruktur der Helvetia, haben. 
+Dies wird getan, da Datenbanken eine ähnliche Struktur wie die Berechtigungsstruktur der Helvetia haben. 
 Anschließend werden die Probleme aus den Befragungen quantifiziert, um daraus die verschiedenen Konzepte zu entwickeln.
 
 
@@ -22,15 +22,15 @@ Dabei wird mittels \ac{IAM} die Identität und der Zugriff reguliert.
 Dabei wird überprüft, ob die Person auch wirklich die ist, als welche diese sich ausgibt.
 Um dies sicherzustellen, gibt es verschiedene Methoden.
 Ein Nutzername mit einem Passwort ist die gängigste Methode, um dies zu tun. Dies wird von den meisten Webseiten und Computern verwendet.
-Um die Authentifizierung sicherer zu gestalten, werden mehrere Faktoren berücksichtigt, um eine Person zu identifizieren.
+Um die Authentifizierung sicherer zu gestalten, werden mehrere Faktoren berücksichtigt, die eine Person identifizieren.
 Dies kann zum Beispiel durch einen Fingerabdruck stattfinden. \cite{IamIEEE} (S.1482)
 \newline
 \newline
 2. Berechtigungsvergabe
 \newline
 Die Berechtigungsvergabe beschäftigt sich damit, welche Berechtigungen jeder Nutzer bekommt.
-Dies wird mittels Autorisierungsrichtlinien gesichert, damit die Nutzer nur Zugriff auf die Ressourcen und Dienste haben, welche diese benötigen.
-Dies wird mithilfe von Profilen erreicht, welche von der Organisation zugewiesen werden. \cite{IamIEEE} (S.1482)
+Dies wird mittels Autorisierungsrichtlinien gesichert, damit die Nutzer nur Zugriff auf die Ressourcen und Dienste haben, welche sie benötigen.
+Dies wird mithilfe von Profilen erreicht, welche ihnen von der Organisation zugewiesen werden. \cite{IamIEEE} (S.1482)
 \newline
 \newline
 3. Identitätsvergabe
@@ -43,7 +43,7 @@ Dabei ist auch wichtig, dass der Mitarbeiter diese digitale Identität wieder ve
 4. Föderierte Identität
 \newline
 Dabei handelt es sich darum, dass die digitalen Identitäten über verschiedene Anwendungen und Organisationen gültig sind.
-Dadurch werden die Informationen der digitalen Identität gespeichert.
+Dafür werden die Informationen der digitalen Identität gespeichert.
 Dies hat den Vorteil, dass der Nutzer sich nur einmal anmelden muss, um auf sämtliche seiner Ressourcen zugreifen zu können.
 Dabei werden Protokolle wie SAML, OAuth oder OpenID verwendet.
 Die Folge dadurch ist, dass der Nutzer sich nicht mehrere Passwörter sowie Accounts merken muss. \cite{IamIEEE} (S.1482)
@@ -51,7 +51,7 @@ Die Folge dadurch ist, dass der Nutzer sich nicht mehrere Passwörter sowie Acco
 \newline
 5. Compliance Verwaltung
 \newline
-Die Compliance Verwaltung überprüft die Authentifizierung- und Zugriffaufzeichnungen, um sicher zu stellen, dass die Richtlinien und Sicherheitsstandards eingehalten wurden.
+Die Compliance Verwaltung überprüft die Authentifizierungs- und Zugriffsaufzeichnungen, um sicher zu stellen, dass die Richtlinien und Sicherheitsstandards eingehalten wurden.
 Diese Überprüfung ist notwendig für effektive Zugriffsregeln.
 Zudem werden diese für Audits benötigt. \cite{IamIEEE} (S.1482)
 \newline
@@ -59,7 +59,7 @@ Zudem werden diese für Audits benötigt. \cite{IamIEEE} (S.1482)
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/IAMISH.PNG}
- \caption{IAM für Cloud Dienste \cite{Moha19} (Seite 3)}
+ \caption{IAM für Cloud Dienste \cite{Moha19} (S. 3)}
  \label{fig:IMAISH}
 \end{figure}
 Dies ist ein Beispiel, wie die oben genannten Punkte umgesetzt werden können.
@@ -68,9 +68,9 @@ Sobald der Account die Berechtigung hat, kann dieser auf die dahinter steckende 
 Die Berechtigungen können dabei auch mittels Profile zusammengefasst werden.
 \newline
 Dabei kann dies auf verschiedenen Wegen umgesetzt werden, da dieselbe Lösung für gewisse Fälle nicht funktioniert.
-Zum Beispiel die Quelle \cite{Cal17}(S.208) beschreibt das Problem, wie die United States of America am besten mit ihren Verbündeten kooperieren soll.
+Zum Beispiel beschreibt die Quelle \cite{Cal17} (S.208) das Problem, wie die United States of America am besten mit ihren Verbündeten kooperieren sollten.
 Da es sich dabei um sensitive Informationen handelt, welche an verschiedene Partner vermittelt werden, muss der Zugriff reguliert werden.
-Auch haben die verschiedenen Länder unterschiedliche Gesetzte, worauf geachtet werden muss. 
+Auch haben die verschiedenen Länder unterschiedliche Gesetze, worauf geachtet werden muss. 
 Deswegen gibt es nicht die eine Lösung, um eine solche Herausforderung zu lösen. \cite{Cal17} (S.208)
 
 
@@ -81,19 +81,24 @@ Bei diesen HV-Tabellen handelt es sich, um DB2-Tabellen.
 Zudem besteht eine Ähnlichkeit zwischen dem Nutzer und dem Profil in der Berechtigungsstruktur im Vergleich zum Account und der Gruppe in Datenbanken.
 Deswegen wird betrachtet, wie der Standard von Accounts und Gruppen innerhalb von Datenbanken ist.
 \newline
-Berechtigungen für Rollen werden mittels GRANT...ON...TO...[GRANT OPTION] vergeben.
+Berechtigungen für Rollen werden mittels folgenden Kommand vergeben: 
+\newline
+\newline
+GRANT...ON...TO...[GRANT OPTION]
+\newline
+\newline
 Dabei wird für die spezifische Berechtigung, zum Beispiel eine View und Account oder Gruppen angegeben.
 Zudem kann auch hinzugefügt werden, ob die Rolle die Berechtigung hat, anderen Accounts die Berechtigungen zu geben.\cite{Ram09} (S.474-475)
 \newline
 Wenn man sich zum Beispiel das Bild (\ref{fig:Berch}) ansieht, könnte der Befehl wie folgt aussehen:
 \newline
 \newline
-GRANT UPDATE ON PKU00 TO L895.
+GRANT UPDATE ON PKU$00$ TO USER$895$.
 \newline
 \newline
-Das würde in diesem Beispiel bedeuten, dass der Nutzer L895 die Bearbeitungsberechtigung für die Ressource PKU00 erhalten hat.
-Dabei kommt auch die Frage, was man eher verwenden sollte.
-Individuelle Berechtigungsvergabe oder Gruppenvergabe für die Accounts.
+Das würde in diesem Beispiel bedeuten, dass der Nutzer USER$895$ die Bearbeitungsberechtigung für die Ressource PKU00 erhalten hat.
+Dabei ergibt sich die Frage, was bevorugt verwendt werden sollte.
+Eine individuelle Berechtigungsvergabe oder Gruppenvergabe für die Accounts.
 Microsoft hat folgendes als Best Practice definiert:
 \newline
 \newline
@@ -111,37 +116,38 @@ Und auch IBM gibt in seiner Best Practice an, dass Angestellte in einem Unterneh
 \newline
 Dies ist jedoch in der Praxis schwierig umzusetzen.
 Im Idealfall benötigt jeder Mitarbeiter ein oder zwei Standardprofile, welche dem Nutzer alle Berechtigungen geben.
-Dies ist aber selten der Fall, da die Nutzer nach Beispielsweise einem halben Jahr an einem anderen Projekt arbeiten und daher andere Berechtigungen benötigen.
+Dies ist aber selten der Fall, da die Nutzer nach beispielsweise einem halben Jahr an einem anderen Projekt arbeiten und daher andere Berechtigungen benötigen.
 Wenn man für jeden solchen Fall ein neues Standardprofil erstellt, werden diese unübersichtlich.
 Ebenso würde das Konzept der Standardprofile in Frage gestellt werden, wenn die Anzahl dieser Standardprofile der Anzahl der Berechtigungen gleicht.
 Dennoch sollte es versucht werden, dass Nutzer so wenig zusätzliche Berechtigungen wie möglich bekommen, um Best Practice Standards einzuhalten. 
 
 \section{DSGVO}
 \label{sec:chapter04:DSGVO}
-Neben den technische Herausforderunge und Anforderungen muss die Struktur neben dem \ac{VAIT} auch den Standards vom \ac{DSGVO} erfüllen.
-Bei Verstoß dieser kann es zur Verwarnung bis zum endgültigen Verbot zum Verarbeiten von den Daten kommen. \cite{EuroK}
-Dies würde die Helvetia sehr viel Geld kosten.
+Neben den technischen Herausforderungen und Anforderungen muss die Struktur neben dem \ac{VAIT} auch den Standards der \ac{DSGVO} erfüllen.
+Bei Verstoß gegen diese kann es zur Verwarnung bis zum endgültigen Verbot der Datenverarbeitung kommen. \cite{EuroK}
+Dies würde die Helvetia sehr viel Geld kosten, da diese nicht mehr operieren könnte.
 \newline
 Eine sichere Berechtigungsstruktur ist daher nötig, um diese Anforderung von der \ac{DSGVO} zu befriedigen.
 Diese ist nämlich verletzt, wenn Daten, für die das Unternehmen verantwortlich ist, von ihrer Vertraulichkeit, Verfügbarkeit oder Integrität verletzt werden.
-Deswegen sind Mitarbeiter, die mehr Berechtigungen, als die sie benötigen eine Risikostelle. \cite{EuroW}
+Deswegen sind Mitarbeiter, die mehr Berechtigungen besitzen, als sie benötigen, eine Risikostelle. \cite{EuroW}
 \newline
-Daher sollte die neue Berechtigungsstruktur so gestaltet werden, dass die Wahrscheinlichkeit, dass die Daten Vertraulichkeit, Verfügbarkeit oder Integrität nicht verletzt werden können.
+Daher sollte die neue Berechtigungsstruktur so gestaltet werden, dass die Verständlichkeit, Verfügbarkeit und INtegrität der Daten nicht verletzt werden können.
 
 \section{Herausforderung und Anforderungen}
 \label{sec:chapter04:Herausforderung}
 Bei der Recherche (\ref{ch:Recherche}) sind verschiedene Herausforderungen und Anforderungen aufgetreten.
 Um qualitativ ein Konzept entwickeln zu können, müssen diese Herausforderungen und Anforderungen aufgelistet und analysiert werden.
-Neben den genannten Punkten wurde der Punkte Implementierung hinzugefügt, da diese bei der Entscheidung der Konzepte elementar ist, da dass Unternehmen sich im Klaren sein muss, wie viele Ressourcen das neue Konzept kostet sowie der Punkt der Performance, da eine bessere Performance immer gut.
+Neben den genannten Punkten wurde der Punkt Implementierung hinzugefügt, da diese bei der Entscheidung der Konzepte elementar ist.
+Denn das Unternehmen muss sich im Klaren sein, wie viele Ressourcen das neue Konzept kostet, sowie der Punkt der Performance, da eine bessere Performance immer gut.
 \begin{itemize}
 	\item Performance der Tabellen erhöhen 
-	\item Übersichtlicher gestalten (effizientere Verifizierung der Mitarbeiter)
+	\item Übersichtlichkeit erhöhren (effizientere Verifizierung der Mitarbeiter)
 	\item Rekursive Beziehungen verhindern
-	\item Hierarchie verringern
+	\item Hierarchien verringern
 	\item \ac{K/W}
 	\item Implementierung
 \end{itemize}
-Um diese zu quantifizieren zu können, wird eine Prioritätsanalyse (\ref{fig:Prio}) verwendet, um festzustellen, wie die Priorität für die Konzepte sein muss. \cite{BdIufH}
+Um diese quantifizieren zu können, wird eine Prioritätsanalyse (\ref{fig:Prio}) verwendet, um festzustellen, wie die Priorität für die Konzepte sein muss. \cite{BdIufH}
 Bei der Prioritätsanalyse wurde sich für ein vier Punktesystem entschieden.
 \newline
 Im Vergleich zwischen der Performance und der Übersichtlichkeit, wurden Performance drei Punkte gegeben und die Übersichtlichkeit hat nur einen Punkt erhalten, da die Performance eine der Grundanforderungen ist, weswegen die Berechtigungsstruktur geändert werden soll.
@@ -152,7 +158,7 @@ Die Performance hat vier Punkte zur Hierarchie und die Hierarchie zur Performanc
 Dies liegt daran, dass neben der Performance die \ac{K/W} elementar sind, da eine Struktur, die sich kaum warten lässt, mehr Ressourcen in der Zukunft kosten wird.
 Zwischen der Übersichtlichkeit und der Rekursion wurden der Rekursion drei Punkte gegeben und der Übersichtlichkeit nur einen, weil rekursive Strukturen unübersichtlicher sind und es daher wichtiger ist, dass es keine gibt.
 Übersichtlichkeit und Hierarchie haben beide zwei Punkte erhalten, da beide eine gleiche Rolle bei der Lesbarkeit der Struktur spielen.
-Übersichtlichkeit, sowie Rekursion und Hierarchie bekommen einen Punkt im Vergleich zu \ac{K/W}, weil dieser Punkt langfristig eine wichtige Rolle spielt, und die anderen drei Punkte sollten keine Probleme sein, sofern sich an die Konventionen gehalten wird, damit die Struktur wartbar bleibt.
+Übersichtlichkeit sowie Rekursion und Hierarchie bekommen einen Punkt im Vergleich zu \ac{K/W}, weil dieser Punkt langfristig eine wichtige Rolle spielt, und die anderen drei Punkte sollten keine Probleme sein, sofern sich an die Konventionen gehalten wird, damit die Struktur wartbar bleibt.
 Die Rekursion bekommt zur Hierarchie vier Punkte und die Hierarchie zur Rekursion null Punkte, da eine rekursive Beziehung die Hierarchie automatisch unendlich macht.
 \newline
 \newline
@@ -197,14 +203,16 @@ Anzumerken dabei ist, dass es trotzdem ein Aufwand ist, diese durchzusetzen und 
 In solchen Fällen würden diese Profile zu Hauptprofilen werden und vom vorherigen Hauptprofil separiert werden.
 	\item Manche Fachbereiche haben aufzählende Profile (\ref{fig:Profile}).
 Diese Profile sollen nur noch über die Berechtigungen für den eigenen Vorgang enthalten, sodass ein Privas Profil nur Privas Berechtigungen enthält.
-Die Berechtigung die verloren gehen würden eigene Profile bekommen und würden über ein anderes Sammelprofil dem Hauptprofil hinzugefügt werden.
-	\item Sollte ein Nutzer weitere Berechtigungen benötigen, würden diese direkt ihm zugewiesen werden.
+Die Berechtigung, die verloren gehen würden, würden eigene Profile bekommen und würden über ein anderes Sammelprofil dem Hauptprofil hinzugefügt werden.
+	\item Sollte ein Nutzer weitere Berechtigungen benötigen, würden ihm diese direkt zugewiesen werden.
 	\item Wenn ein Account reaktiviert wird, muss dieser rezertifiziert werden.
 \end{itemize}
 Diese Konventionen sollen verhindern, dass die Struktur weiter wächst und das man ohne Probleme feststellen kann, was für Berechtigungen ein Profil hat.
 Zudem hat es den Vorteil, dass rekursive Beziehungen, sowie redundante Berechtigungsvergabe nicht möglich sind, da die Profile nur noch Profile oder Berechtigungen enthalten, die nicht mehr auf sich gegenseitig zeigen.
 Dadurch soll auch die Übersichtlichkeit verbessert und das Hierarchieproblem auf ein Minimum gebracht werden.
-Außerdem sollte die Performance verbessert werden. Dies durch die fehlenden rekursiven Beziehungen, sowie die Vereinfachung der Struktur, mit der Reduktion der Berechtigungen.
+Außerdem sollte die Performance verbessert werden.
+Dabei helfen verschiedene Faktoren, um diese zu verbessern.
+Die reduzierte der rekursiven Beziehungen, sowie die Vereinfachung der Struktur, mit der Reduktion der Berechtigungen, machen die Berechtigungsstruktur performanter.
 \begin{figure}[h!]
 \hspace*{-2cm}
  \centering
@@ -226,7 +234,7 @@ Zudem kann auch erkannt werden, dass die Hierarchie verringert wurde.
 Das aktuelle Verfahren, das verwendet wird, um die Berechtigung zu überprüfen, gleicht einem Insertion-Sort.
 Dabei wird jedes einzelne Profil durchgegangen, bis die gewünschte Berechtigung gefunden wurde.
 Dies weißt eine Komplexität von n im Optimalfall und $n^2$ im schlimmsten Falle auf.
-n beschreibt dabei, die Anzahl von Profilen/Berechtigungen, die der Algorithmus durchlaufen muss. \cite{weblogIn,log} (S. 12)
+n beschreibt dabei die Anzahl von Profilen/Berechtigungen, die der Algorithmus durchlaufen muss. \cite{weblogIn,log} (S. 12)
 \newline
 Bei der neuen Struktur kann ein Merge-Sort genutzt werden.
 Dabei achtet der Algorithmus auf bestimmte Eigenschaften der Profile.
@@ -257,17 +265,17 @@ Average(Insert) = $100^2 = 10.000$
 Average(Merge) = $100*log(100) = 200$
 \newline
 \newline
-Man kann erkennen, dass im normalen Falle die neue Struktur mit dem Merge-Sort deutlich effektiver ist als die bestehende Struktur.
+Man kann erkennen, dass im normalen Fall die neue Struktur mit dem Merge-Sort deutlich effektiver ist als die bestehende Struktur.
 Diese würde durchschnittlich $50$ mal effektiver sein.
 \newline
 \newline
 Die Entwicklung dieses Konzeptes ist aufwendig und komplex.
-Es gibt dabei zwei Möglichkeiten wie dieses umgesetzt werden kann.
+Es gibt dabei zwei Möglichkeiten, wie dieses umgesetzt werden kann.
 Die erste Möglichkeit besteht dabei, dass sich eine Gruppe von Entwicklern an die bestehende Struktur setzen, eine Kopie davon erstellen und anhand der Kopie die neue Struktur erstellen.
-Dies ist jedoch Zeit aufwendig und es besteht ein hohes Potenzial, dass Fehler geschehen durch nachlässiges Arbeiten.
+Dies ist jedoch Zeitaufwendig und es besteht ein hohes Potenzial, dass Fehler durch nachlässiges Arbeiten geschehen.
 \newline
 Die zweite Möglichkeit wäre eine Algorithmus zu schreiben, welcher dies automatisiert.
-Da weder die Zeit besteht noch die entsprechende Umgebung zum Testen eines Prototypen, kann die Entwicklung des Algorithmus innerhalb dieser Arbeit nur mittels von Pseudocode stattfinden.
+Da weder die Zeit besteht noch die entsprechende Umgebung zum Testen eines Prototypen, kann die Entwicklung des Algorithmus innerhalb dieser Arbeit nur mittels Pseudocode stattfinden.
 Dabei würde die Automatisierung wie folgt aussehen.
 \newline
 \newline
@@ -288,9 +296,9 @@ Der Algorithmus muss dabei die Profile in zwei Kategorien aufteilen:
 Für die Standardprofile werden die Profile überprüft, die viele Unterprofile haben.
 Wenn ein Profil X Y viele Unterprofile hat, wird dieses zu einem Standardprofil.
 Die restlichen Profile werden zu Lese-/Schreibeprofile.
-Die individuellen Sammelprofile werden basierend auf den Lese-/Schreibeprofile generiert.
-Die Verbindungen zwischen den bisherigen Profilen wird aufgebrochen und zu den neuen Sammelprofilen zu gewiesen, welche mit dem Standardprofil verbunden sind.
-Anschließend werden auf redundante Profile und Berechtigungen überprüft, welche dann entfernt werden.
+Die individuellen Sammelprofile werden basierend auf den Lese-/Schreibeprofilen generiert.
+Die Verbindungen zwischen den bisherigen Profilen werden aufgebrochen und zu den neuen Sammelprofilen zugewiesen, welche mit dem Standardprofil verbunden sind.
+Anschließend werden auf redundante Profile und Berechtigungen überprüft, welche dann entfernt wird.
 Dabei muss man aber zum Schluss begutachten, ob alle generierten Standardprofile wirklich Standardprofile sein sollten sowie ob die bestehende Anzahl ausreichend ist.
 Die Grafik (\ref{fig:Hier}) stellt dies als ein Ablaufdiagram dar.
 \begin{figure}[h!]

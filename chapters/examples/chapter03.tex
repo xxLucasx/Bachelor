@@ -25,13 +25,13 @@ Oder übersetzt:
 Dabei spielt der Mainframe eine wichtige Rolle in der Finanzindustrie, welche widerstandsfähige, sichere und agile Server benötigt.
 Dies ist der Fall, weil die Finanzindustrie über viele sensible Daten verfügt.
 Daher müssen die Server sicher und widerstandsfähig sein, damit diese Daten nicht verloren gehen oder gestohlen werden.
-Zudem müssen die Server agil sein, da die Technologie und die Regulierungen für den Mainframe sich stetig ändern und dieser daher immer auf dem neuesten Stand sein muss.
-Der Mainframe muss die Regularien vom \ac{VAIT} erfüllen, die von der \ac{BaFin} aufgestellt werden.
+Zudem müssen die Server agil sein, da sich die Technologie und die Regulierungen für den Mainframe sich stetig ändern und dieser daher immer auf dem neuesten Stand sein muss.
+Der Mainframe muss die Regularien der \ac{VAIT} erfüllen, die von der \ac{BaFin} aufgestellt werden.
 Die \ac{BaFin} soll eine konsistente IT-Strategie vorgeben, an die sich die Unternehmen halten müssen. \cite{Vait}
 
 \section{Berechtigung}
 \label{sec:Berechtigung}
-Dabei definiert die \ac{NIST}, welche eine Institution von amerikanischer Regierung ist, Berechtigungen wie folgt:
+Dabei definiert die \ac{NIST}, welche eine Institution von der amerikanischer Regierung ist, Berechtigungen wie folgt:
 \newline
 \newline
 \textit{"`The right or a permission that is granted to a system entity to access a system resource."'} \cite{Auth}
@@ -51,8 +51,8 @@ Im Kontext des Mainframebereiches betrifft dies bei Helvetia hauptsächlich das 
  \label{fig:Dial}
 \end{figure}
 Die Grafik (\ref{fig:Dial}) zeigt eine solche Dialogmaske.
-Anhand dieser Dialogmaske kann man erkennen, dass der Nutzer L895 für die aufgezählten weiteren Dialogmasken (EL 00, EX 00, ...) zumindest die Leseberechtigung hat.
-Zudem hat dieser die Schreibberechtigungen auf die Dialogmaske DM 00, da dieser sich in dieser Maske aufhält. 
+Anhand dieser Dialogmaske kann man erkennen, dass der Nutzer USER$895$ für die aufgezählten weiteren Dialogmasken (EL$00$, EX$00$, ...) zumindest die Leseberechtigung hat, da diese auf der Dialogmaske DM$00$ angezeigt werden.
+Zudem hat dieser die Schreibberechtigungen auf die Dialogmaske DM$00$, da dieser sich in dieser Maske aufhält. 
 \newline
 \newline
 \begin{figure}[h!]
@@ -61,7 +61,7 @@ Zudem hat dieser die Schreibberechtigungen auf die Dialogmaske DM 00, da dieser 
  \caption{Berechtigungsdialogmaske}
  \label{fig:Berch}
 \end{figure}
-In dieser Grafik (\ref{fig:Berch}) kann man die Profile und individuellen Berechtigungen sehen, die der Nutzer L895 besitzt.
+In dieser Grafik (\ref{fig:Berch}) kann man die Profile und individuellen Berechtigungen sehen, die der Nutzer USER$895$ besitzt.
 Dabei sind Profile eine Ansammlung von Berechtigungen.
 
 \section{Berechtigungsstruktur}
@@ -104,7 +104,7 @@ Daher ist die aktuelle Berechtigungsstruktur hierarchisch bei der Helvetia.
 
 \section{IAM}
 \label{subsec:IAM}
-Die Virginia IT Agency beschreibt IAM wie folgt: Das \ac{IAM} ist eine Möglichkeit, sämtliche Nutzer und Profile, welche man zu den jeweiligen Personen über die IT-Umgebung über Nutzerrollen und Businessregeln zu ordnen kann, zu handhaben. Dabei ist die Zugriffverwaltung die Möglichkeit die Zugriffskontrolle über Regeln auf verschiedenen Plattformen einzuhalten. Ein wichtiger Teil von \ac{IAM} ist sicherzustellen, dass die Nutzer einen sicheren Zugriff auf die Ressourcen haben und auch nur auf die Ressourcen, die sie benötigen, um ihre Arbeit zu erledigen. \cite{Virg07}
+Die Virginia IT Agency beschreibt IAM wie folgt: Das \ac{IAM} ist eine Möglichkeit, sämtliche Nutzer und Profile, welche man zu den jeweiligen Personen über die IT-Umgebung über Nutzerrollen und Businessregeln zu ordnen kann, zu handhaben. Dabei ist die Zugriffverwaltung die Möglichkeit die Zugriffskontrolle über Regeln auf verschiedenen Plattformen einzuhalten. Ein wichtiger Teil von \ac{IAM} ist sicherzustellen, dass die Nutzer einen sicheren Zugriff auf die Ressourcen haben und auch nur auf die Ressourcen, die sie benötigen, um ihre Arbeit zu erledigen. \cite{Virg07} (S. 3)
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/IAM.PNG}
@@ -112,9 +112,9 @@ Die Virginia IT Agency beschreibt IAM wie folgt: Das \ac{IAM} ist eine Möglichk
  \label{fig:IAM}
 \end{figure}
 Im Bild (\ref{fig:IAM}) kann man erkennen, dass wenn ein Nutzer oder Programm Zugriff auf eine Ressource möchte, dieser die Identifizierung, Authentifizierung, Autorisierung, sowie Rechtschaffenheit vorlegen und einhalten muss. \cite{Moha19}
-Beispielsweise wenn der Nutzer Lucas Stumm Daten vom Host haben möchte, muss dieser durch verschiedene Schritte gehen.
-Als Erstes muss sich dieser Identifizieren mittels eines Nutzernamens und Passwort.
-Während dieser sich durch die Menüs manövriert hat, wird überprüft, ob Lucas Stumm überhaupt die Berechtigungen hat, diese Menüs sehen und auswählen zu können.
+Wenn der Nutzer Lucas Stumm beispielsweise die Daten vom Host haben möchte, muss dieser durch verschiedene Schritte gehen.
+Als Erstes muss sich dieser Identifizieren mittels eines Nutzernamens und Passworts.
+Während dieser sich durch die Menüs manövriert , wird überprüft, ob Lucas Stumm überhaupt die Berechtigungen hat, diese Menüs sehen und auswählen zu können.
 Wenn dies der Fall ist, kann der Nutzer auf die Daten zugreifen.
 \newline
-Im Rahmen dieser Ausarbeitung handelt es sich bei den Ressourcen, um die Berechtigungen (\ref{sec:Berechtigung}).
+Im Rahmen dieser Ausarbeitung handelt es sich bei den Ressourcen um die Berechtigungen (\ref{sec:Berechtigung}).

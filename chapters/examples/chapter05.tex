@@ -1,18 +1,18 @@
 \chapter{Vergleich}
 \label{ch:chapter05}
-In diesem Kapitel werden die beiden Konzepte "`hierarchische Struktur"' und "`minimalistisch"' mittels einer Nutzwertanalyse betrachtet.
+In diesem Kapitel werden die beiden Konzepte hierarchische Struktur und minimalistisch mittels einer Nutzwertanalyse betrachtet.
 Diese sollen helfen herauszufinden, welches der beiden Konzepte die vorher genannten Kriterien am besten erfüllt.
 Dabei werden die Ergebnisse der Prioritätsanalyse verwendet und basierend auf dem Erfolg, welches das Konzept für das jeweilige Kriterium hat, verrechnet und addiert.
 Das Konzept mit einem höheren Wert erfüllt mehr die Kriterien als das andere.
-Zum Abschluss wird die alternative racF begutachtet auf ihre Vor- und Nachteile.
+Zum Abschluss wird die Alternative \ac{RACF} auf ihre Vor- und Nachteile betrachtet.
 
 \section{Nutzwertanalyse}
 \label{sec:chapter05:Nutz}
-Für die Nutzwertanalyse müssen die jeweiligen \ac{TN} bestimmt werden.
+Für die Nutzwertanalyse müssen der jeweilige \ac{TN} bestimmt werden.
 Dies wird mittels \ac{Gf} mal der \ac{Zf} gemacht.
 Daraus bildet sich der \ac{TN} und die Summe davon generiert den \ac{GN}.
 Der höhere \ac{GN} zeigt, dass dieses Konzept einen höheren Nutzen hat.
-Anzumerken dabei ist, dass wenn die \ac{GN} zu ähnlich sind, weitere Schritte vorgenommen werden sollen, um ein eindeutiges Rank zu erschaffen.
+Anzumerken dabei ist, dass wenn der jeweilige \ac{GN} zu ähnlich ist, dass weitere Schritte vorgenommen werden sollen, um eine eindeutige Rangfolge zu erschaffen.
 Für die \ac{Zf} wurde wieder ein vier Punktesystem ausgewählt.
 Die Tabelle (\ref{fig:Ziel}) zeigt, was die verschiedenen Zahlen bedeuten. \cite{BdIufH}
 \begin{figure}[h!]
@@ -29,8 +29,9 @@ Die Tabelle (\ref{fig:Ziel}) zeigt, was die verschiedenen Zahlen bedeuten. \cite
  \label{fig:Nutz}
 \end{figure}
 
-Wie man erkennen kann ist der \ac{GN} zwischen den beiden Faktoren bei $70$.
-Da kein Unterschied erkannt werden kann, werden die Wertmaßstäbe weiter verfeinert.
+Wie in der Grafik erkennbar ist, ist der \ac{GN} zwischen den beiden Faktoren bei $70$.
+Da der Unterschied zu klein ist, werden die Wertmaßstäbe weiter verfeinert.
+Deswegen wird die \ac{Zf} verdoppelt, um einen eindeutigeren Unterschied zu erkennen.
 Dadurch ändert sich die Punkteskala und die Tabelle wie folgt:
 \begin{figure}[h!]
  \centering
@@ -45,8 +46,7 @@ Dadurch ändert sich die Punkteskala und die Tabelle wie folgt:
  \caption{Nutzwertanalyse für die beiden Konzepte}
  \label{fig:Nutz}
 \end{figure}
-Durch die Verfeinerung liegt der Unterschied zwischen den beiden Faktoren bei $135$.
-Wodurch das Konzept der hierarchischen Struktur eindeutig im Rank an der ersten Stelle steht.
+Durch die Verfeinerung liegt der Unterschied zwischen den beiden Faktoren bei $135$, wodurch das Konzept der hierarchischen Struktur eindeutig der Rangfolge an der ersten Stelle steht.
 
 \section{Vor/Nachteile der hierarchischen Struktur}
 \label{sec:chapter05:Hierarchische}
@@ -55,13 +55,13 @@ Die Performance hat vier bekommen, da die Effizienz durch den Algorithmus im All
 Dies ist eine enorme Steigerung, weshalb es die maximale Punktzahl bekommen hat.
 Die Übersichtlichkeit hat vier Punkte erhalten, weil die Entwickler einstimmig dieses Konzept als übersichtlicher empfinden.
 Zudem ist es einfacher festzustellen, welches Profil, welche Aufgabe hat.
-Aber es hat zwei Punkte verloren dadurch, dass die Grafik bei weiteren Profilen schwieriger zu lesen wird, da diese größer ist.
-Rekursion hat vier Punkte erlangt, da es durch die Regelung, dass Profile nur noch Profile oder Berechtigungen enthalten sowie die feste Struktur keine rekursiven Beziehungen möglich sind, sofern man nicht aktiv gegen die Regelungen verstößt.
+Aber es hat zwei Punkte dadurch verloren, dass die Grafik bei weiteren Profilen schwieriger zu lesen wird, da diese größer ist.
+Rekursion hat vier Punkte erlangt, da durch die Regelung, dass Profile nur noch Profile oder Berechtigungen enthalten sowie die feste Struktur keine rekursiven Beziehungen möglich sind, sofern diese Regelungen nicht aktive verletzt werden.
 Deshalb hat es wie Performance vier Punkte erhalten.
-Für die Hierarchie hat die Struktur nur einen Punkt bekommen, weil es bei diesem Punkt darum ging die Hierarchie so stark wie möglich zu verringern.
+Für die Hierarchie hat die Struktur nur einen Punkt bekommen, weil es bei diesem Punkt darum ging, die Hierarchie so stark wie möglich zu verringern.
 Es ist besser als die vorherige Hierarchie, aber dennoch sehr hierarchisch.
 Die \ac{K/W} haben nur vier Punkte bekommen, da nach der Entwicklung der Profile, diese nicht mehr geändert werden sollen.
-Die Implementierung hat lediglich zwei Punkte bekommen, da diese aufwendig.
+Die Implementierung hat lediglich zwei Punkte bekommen, da diese aufwendig ist.
 \newline
 \newline
 Nachdem die \ac{Zf} erweitert wurde, haben sich die Werte wie folgt verändert.
@@ -76,7 +76,7 @@ Die Hierarchie hat vier Punkte bekommen, da die Hierarchie, wenn auch nur minima
 Dies würde nur drei Punkte geben, aber da auch die Hierarchiestufen auf vier limitiert wurden, hat dies einen weiteren Punkt gegeben.
 \ac{K/W} hat nur sieben statt acht Punkte bekommen, da dieses Konzept, trotz dessen, dass es nicht geändert werden soll, in einem regelmäßigen Zyklus gewartet werden muss.
 Dies liegt daran, dass man überprüfen muss, ob nicht ein Entwickler aus Faulheit die Struktur geändert hat.
-Daher ist es eine hervorragende Lösung, aber man muss dennoch etwas berücksichtigen.
+Daher ist es eine hervorragende Lösung, aber dennoch muss dies berücksichtigt werden.
 \newline
 \newline
 Zusammenfassend hat das Konzept der hierarchischen Struktur viele positive Aspekte.
@@ -89,7 +89,7 @@ Dies würde einiges an Personentagen sowie weiteres Geld kosten.
 Das minimalistische Konzept hat für die Performance zwei, die Übersichtlichkeit eins, die Rekursion vier, die Hierarchie vier, die \ac{K/W} zwei und die Implementierung vier Punkte erhalten.
 Durch die verringerte Struktur hat sich die Performance ebenso verbessert, aber dies ist keine permanente Lösung, da ein Ansteigen der Profilanzahl diesen Bonus nichtig macht.
 Aus diesem Grund hat es nur zwei Punkte bekommen.
-Die Übersichtlichkeit hat es nur einen Punkt erlangt.
+Die Übersichtlichkeit hat nur einen Punkt erlangt.
 Auch wenn durch das Entfernen der Hierarchie weniger Verwirrung herrscht, ist es dennoch sehr unübersichtlich, wenn alle Berechtigungen, mit Ausnahme der Standardberechtigungen, direkt am Profil hängen.
 Da es keine tiefe Hierarchie mehr gibt, ist es auch unmöglich, dass es eine Rekursion gibt.
 Weshalb dieses Konzept in diesem Punkt die maximale Anzahl von Punkten erlangt.
@@ -101,17 +101,18 @@ Dies ist eine Sorge, da genau dies zur unübersichtlichen Berechtigungsstruktur 
 Nach der Spezifizierung hat sich die Bewertung des minimalistischen Konzepts wie folgt geändert.
 Die Performance wurde auf vier Punkte angepasst. Ebenso wurde die Übersichtlichkeit auf vier, die Rekursion auf acht, die Hierarchie auf acht, die \ac{K/W} auf vier und die Implementierung auf sechs Punkte geändert.
 Der Punkt Performance hat die Bewertung befriedigend bekommen, da diese eine Verbesserung zur ursprünglichen Struktur ist.
-Dennoch muss berücksichtigt werden, dass dies sich mit einer wachsenden Struktur verschlechtern wird, weshalb diese Verbesserung nur temporär ist.
+Dennoch muss berücksichtigt werden, dass sich dies mit einer wachsenden Struktur verschlechtern wird, weshalb diese Verbesserung nur temporär ist.
 Die Übersichtlichkeit hat die Note gut statt ein vollbefriedigend erhalten.
 Auch wenn durch die Struktur die Beziehungen zwischen den Berechtigungen und dem Nutzer simpler sind, ist das Betrachten dieser schwierig, wenn die Anzahl der Berechtigungen wächst.
 Dies liegt daran, dass die Berechtigungen nicht mehrmals an verschiedenen Stellen dem Profil zugewiesen werden.
 Die Rekursion erlangt ein exzellent, da es nicht möglich ist, eine rekursive Beziehung zu erstellen, außer, wenn ein Standardprofil auf sich selber zeigt.
 Die Hierarchie hat ebenso wie die Rekursion ein exzellent erhalten, da eine weitere Reduktion der Hierarchie für lediglich mehr Chaos sorgen würde, da dann alle Berechtigungen direkt am Nutzer hängen.
 Die \ac{K/W} erlangt vier Punkte. 
-Das minimalistische Konzept hat nicht viele Konventionen die überprüft werden müssen. Ebenso ist die Überprüfung einfach, da die Struktur so minimalistisch ist, aber es regelmäßig überprüft werden muss und das Risiko, dass ein Entwickler die Struktur ändert, ist hoch.
+Das minimalistische Konzept hat nicht viele Konventionen, die überprüft werden müssen.
+Ebenso ist die Überprüfung einfach, da die Struktur so minimalistisch ist, aber regelmäßig überprüft werden muss und das Risiko, dass ein Entwickler die Struktur ändert, ist hoch.
 \newline
 \newline
-Zusammenfassend kann gesagt werden, dass das minimalistische Konzept am Hilfsreichsten ist, wenn man nach spezifischen Berechtigungen sucht.
+Zusammenfassend kann gesagt werden, dass das minimalistische Konzept am hilfsreichsten ist, wenn man nach spezifischen Berechtigungen sucht.
 Durch die minimale Hierarchie gibt es nicht viele Stellen, die überprüft werden müssen oder Stellen, an denen Rekursionen entstehen können.
 Auf der anderen Seite ist jedoch die Verbesserung der Performance nicht stabil und kann sich schnell ändern, wenn weitere Profile hinzugefügt werden.
 Die Implementierung ist im Verhältnis zum Konzept der hierarchischen Struktur deutlich einfacher, da für jeden Fachbereich die Standardprofile entwickelt werden müssen und ansonsten die restlichen Berechtigungen direkt den Nutzern zu geteilt werden. Dadurch müssen keine neuen Profile entwickelt werden.
@@ -125,7 +126,7 @@ Den die Helvetia verwendet aktuell schon \ac{CICS} von IBM für die Kommunikatio
 Dabei wird auch das \ac{RACF} verwendet.
 Aus diesem Grund wurde überlegt, ob nicht die DB$2$ Tabellen ebenso in diese Umgebung integriert werden sollen.
 Das hätte den Vorteil, dass sämtliche Prozesse an einem Ort stattfinden und daher die Suche etwas vereinfacht ist.
-Zudem würde man sich von der Welt des Hosts weiter distanzieren.
+Zudem wäre dies ein Schritt, um sich von der Welt des Hosts weiter zu distanzieren.
 Dies wäre ein positiver Aspekt, wenn das Unternehmen sich in der Zukunft vom Host lösen möchte.
 \newline
 \newline
@@ -149,7 +150,7 @@ Auf der anderen Seite bestehen jedoch die folgenden Probleme:
 \end{itemize}
 Die aktuelle DB$2$ Tabelle verfügt über verschiedene Schnittstellen für die Abfrage von Berechtigungen.
 Wenn diese durch das \ac{RACF} ersetzt werden sollen, müssen diese durch neue Schnittstellen ersetzt werden.
-Im Gespräch mit den IT-Spezialisten wurde gesagt, dass dies ein großes Problem aufweist, da dafür eine spezielle \ac{API} entwickelt werden müsste.
+Im Gespräch mit den IT-Spezialisten wurde gesagt, dass dies ein großes Problem aufweist, da dafür eine spezielle Application Programming Interface entwickelt werden müsste.
 Dies würde neben dem normalen Wechsel von den DB$2$ Tabellen zu \ac{RACF} für weitere Kosten sorgen.
 \newline
 Ein anderes Problem ist auch der Transfer der bestehenden Daten in das \ac{RACF}.
