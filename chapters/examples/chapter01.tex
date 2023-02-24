@@ -10,7 +10,7 @@ Diese Personen verfügen über Profile, die ihnen diese Berechtigungen zur Verf�
 Jedoch kann es passieren, dass solche Profile gestohlen oder Personen gegeben werden, welche diese nicht haben dürfen.
 Berechtigungsstrukturen sollen genau diese Szenarien verhindern.
 Wird aber eine Berechtigungsstruktur lange genutzt und werden nicht alle Richtlinien und Normen eingehalten, so wird diese im Laufe der Zeit unsicherer und unübersichtlicher.
-Das hat zur Folge, dass das Risiko, dass die sensitiven Informationen in nicht autorisierte Händen kommen, steigt.
+Hierdurch steight das Risiko, dass die sensitiven Informationen in nicht autorisierte Hände gelangen.
 Dadurch können sogenannte "`Super Accounts"' entstehen.
 "`Super Accounts"' verfügen über zu viele bis zu allen Berechtigungen im System.
 Sollte diese Person durch einen Angriff diesen "`Super Account"' verlieren, wäre die gesamte Struktur kompromittiert.
@@ -19,16 +19,16 @@ Dasselbe ist der Fall, wenn ein Mitarbeiter mit einem solchen Account dem Untern
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/Cyber_Crime.PNG}
- \caption{Eine Umfrage von deutschen Unternehmen, die von Daten Diebstahl, Espionage oder Sabotage betroffen waren. \cite{Stat22}}
+ \caption{Eine Umfrage von deutschen Unternehmen, die von Daten Diebstahl, Spionage oder Sabotage betroffen waren. \cite{Stat22}}
  \label{fig:Crime}
 \end{figure}
 
-Wie man in der Grafik (\ref{fig:Crime}) erkennen kann, waren 88\% der befragten Unternehmen in Deutschland von Datendiebstahl, Espionage oder Sabotage in 2021 betroffen.
-In 2022 lag die Zahl bei 84\%.
+Wie man in der Grafik (\ref{fig:Crime}) erkennen kann, waren 88\% der befragten Unternehmen in Deutschland von Datendiebstahl, Spionage oder Sabotage in 2021 betroffen.
+Im Jahr 2022 lag der Anteil bei 84\%.
 Wobei man berücksichtigen muss, dass diese Befragung zwischen Januar und März stattgefunden hat und dies daher nur das erste Quartal von 2022 abdeckt.
-Aufgrund dessen, dass solche Angriffe wahrscheinlich sind, darf es keine "`Super Accounts"' geben, da diese ansonsten in solchen Angriffen als Schwachstelle ausgenutzt werden können.
-Genauso müssen die Strukturen übersichtlich sein, damit es bei einer Überprüfung keine Problem darstellt, festzustellen, welcher Nutzer welche Berechtigungen hat.
-Wenn dies nicht der Fall ist, kann es passieren, dass die jeweiligen Nutzer zu viele Berechtigungen haben und dies wäre wieder ein Problem bei Espionage oder Sabotage.
+Aufgrund dessen, dass solche Angriffe wahrscheinlich sind, sollte es keine "`Super Accounts"' geben, da diese ansonsten in solchen Angriffen als Schwachstelle ausgenutzt werden können.
+Genauso müssen die Strukturen übersichtlich sein, damit es bei einer Überprüfung keine Probleme bei der Analyse gibt, welcher Nutzer welche Berechtigungen verfügt.
+Wenn dies nicht der Fall ist, kann es passieren, dass die jeweiligen Nutzer zu viele Berechtigungen haben und dies so weitere Schwachstellen bei Spionage oder Sabotage entstehen.
 Um dies zu erreichen, gibt es verschiedene Methoden und Konzepte, die die Berechtigungsstrukturen sicher und übersichtlich gestalten.
 
 %
@@ -36,8 +36,8 @@ Um dies zu erreichen, gibt es verschiedene Methoden und Konzepte, die die Berech
 %
 \section{Ziel der Arbeit}
 \label{sec:intro:goal}
-Diese Arbeit ist eine Vergleichsarbeit, bei der verschiedene Konzepte verglichen werden.
-Dabei wird auf die folgende Fragestellung in dieser Arbeit eingegangen, \textit{inwieweit man bestehende Berechtigungsstrukturen im Hostbereich verändern und optimieren kann}.
+Diese wissenschaftliche Ausarbeitung ist eine Vergleichsarbeit, bei der verschiedene Konzepte verglichen werden.
+Dabei wird auf die folgende Fragestellung in dieser Arbeit eingegangen: \textit{inwieweit man bestehende Berechtigungsstrukturen im Hostbereich verändern und optimieren kann}.
 Dazu gibt es drei Unterfragen, welche verwendet werden, um die Problemstellung systematisch zu beantworten.
 
 \begin{itemize}
@@ -49,12 +49,12 @@ Dazu gibt es drei Unterfragen, welche verwendet werden, um die Problemstellung s
 Die erste Unterfrage wird durch eine Recherche mit verschiedenen Arbeiten im Bereich der Berechtigungsstruktur beantwortet.
 Dies soll einen Überblick zum Stand der Technik geben.
 Anschließend wurden mehrere Befragungen durchgeführt, um die bestehenden Konzepte nach den Wünschen der Befragten anzupassen.
-Darauf basierend werden die bestehenden Methoden geranked und verglichen.
-Dies beantwortet die zweite Unterfrage mittels des erstellten Vergleiches.
+Darauf basierend werden die bestehenden Methoden bewertet und verglichen.
+Dies beantwortet die zweite Unterfrage mithilfe des erstellten Vergleiches.
 \newline
 Um die dritte Frage zu beantworten, wird ein Schema verwendet, welches als eine Hilfestellung zur Konzeptauswahl dienen wird.
 Zum Schluss wird eine Alternative zum bestehenden System vorgestellt.
-Dies ist die Arbeit in visueller Form.
+In der Grafik \ref{gif:vorgehen} ist der Aufbau der Arbeit schematisch dargestellt.
 \newpage
 \begin{figure}[h!]
 \hspace*{-3cm}
@@ -72,17 +72,17 @@ Dies ist die Arbeit in visueller Form.
  \caption{Ursache-Wirkungs-Diagramm (Fischgrätenmodell)}
  \label{fig:Fisch}
 \end{figure}
-Im Ursache-Wirkungs-Diagramm wurden dabei die folgenden drei Punkte als Hauptursache für das Problem der bestehenden Berechtigungsstruktur erkannt.
+Im Ursache-Wirkungs-Diagramm wurden dabei die folgenden drei Punkte als Hauptursache für das Problem der bestehenden Berechtigungsstruktur erkannt:
 \begin{itemize}
 	\item Mensch
 	\item Management
 	\item Methode
 \end{itemize}
-Bei Mensch sind die Mitarbeiter genannt, die die Berechtigungsstruktur verwalten und hegen.
+Hier bezeichnet Mensch diejenigen Mitarbeiter, welche die Berechtigungsstruktur verwalten und hegen.
 Dort wurden die Punkte Faulheit und Unwissenheit genannt.
-Dies liegt daran, dass es nicht unüblich ist, dass diese gewisse Formalien ignorieren, um einfacher das Problem zu beheben.
+Es ist nicht unüblich, dass diese gewisse Formalien ignorieren, um einfacher das Problem zu beheben.
 Auf der anderen Seite ist auch die Unwissenheit ein Problem, da die gesamte Struktur so gewachsen ist.
-Dadurch ist es unmöglich, für jemand diese komplett nachzuvollziehen.
+Dadurch ist es unmöglich, für jemanden diese komplett nachzuvollziehen.
 \newline
 Das Management hat nicht die Zeit, sich genau mit dem Problem zu beschäftigen.
 Dies hat zur Folge, dass das Management wie die Mitarbeiter unwissend ist.
@@ -90,7 +90,7 @@ Dies hat zur Folge, dass das Management wie die Mitarbeiter unwissend ist.
 Bei der Methode stellt die Zeit, fehlende Kontrolle und fehlende Konventionen als Problem dar.
 Mit der Zeit ist gemeint, dass die aktuelle Problemstellung schon so lange der Fall ist, dass dies ein Problem ist.
 An vielen Stellen fehlt die Kontrolle bei der bestehenden Berechtigungsstruktur.
-Dies ist zum Beispiel der Fall, wenn ein Account wieder aktiviert wird, da dieses nicht überprüft wird.
+Dies ist zum Beispiel der Fall, wenn ein Account wieder aktiviert wird oder bei der Überprüfung von Profilen.
 Denn wenn es diese gäbe, dürfte es keine rekursiven Beziehungen geben.
 Es fehlt auch eine allgemeine Konvention, wie die Profile in den verschiedenen Fachbereichen funktionieren.
 Dies sorgt dafür, dass es die Mitarbeiter schwerer haben alle Verbindungen zu verstehen und macht die gesamte Struktur komplexer.

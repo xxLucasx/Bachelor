@@ -31,7 +31,7 @@ Die \ac{BaFin} soll eine konsistente IT-Strategie vorgeben, an die sich die Unte
 
 \section{Berechtigung}
 \label{sec:Berechtigung}
-Dabei definiert die \ac{NIST}, welche eine Institution von der amerikanischer Regierung ist, Berechtigungen wie folgt:
+Dabei definiert die \ac{NIST}, welche eine Institut der amerikanischen Regierung ist, Berechtigungen wie folgt:
 \newline
 \newline
 \textit{"`The right or a permission that is granted to a system entity to access a system resource."'} \cite{Auth}
@@ -66,8 +66,8 @@ Dabei sind Profile eine Ansammlung von Berechtigungen.
 
 \section{Berechtigungsstruktur}
 \label{sec:Berechtigungsstruktur}
-Eine Berechtigungsstruktur besteht aus den Berechtigungen, die im Unterkapitel (\ref{sec:Berechtigung}) definiert werden, und aus der Struktur.
-Dabei definiert Oxford Struktur wie folgt:
+Eine Berechtigungsstruktur besteht aus den Berechtigungen, die im Unterkapitel (\ref{sec:Berechtigung}) definiert werden, sowie aus einer Struktur.
+Dabei definiert Oxford den Begriff Struktur wie folgt:
 \newline
 \newline
 \textit{"`the way in which the parts of something are connected together, arranged or organized; a particular arrangement of parts"'} \cite{Struct}
@@ -75,7 +75,7 @@ Dabei definiert Oxford Struktur wie folgt:
 \newline
 Dies bedeutet, dass die Teile miteinander verknüpft, angeordnet oder organisiert sind. \cite{Struct}
 \newline
-In diesem Zusammenhang bedeutet Berechtigungsstruktur die Verknüpfung, Anordnung oder Organisation von Berechtigungen.
+In diesem Zusammenhang meint der Begriff Berechtigungsstruktur die Verknüpfung, Anordnung oder Organisation von Berechtigungen.
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/Struktur.PNG}
@@ -99,21 +99,26 @@ Die Grafik (\ref{fig:Ber}) zeigt, dass die Profile PGE$20$ und PGE$30$ zum Beisp
 	\item GEVA
 	\item GE$20$
 \end{itemize}
-Daher ist die aktuelle Berechtigungsstruktur hierarchisch bei der Helvetia.
-
+Daher ist die aktuelle Berechtigungsstruktur bei der Helvetia hierarchisch.
 
 \section{IAM}
 \label{subsec:IAM}
-Die Virginia IT Agency beschreibt IAM wie folgt: Das \ac{IAM} ist eine Möglichkeit, sämtliche Nutzer und Profile, welche man zu den jeweiligen Personen über die IT-Umgebung über Nutzerrollen und Businessregeln zu ordnen kann, zu handhaben. Dabei ist die Zugriffverwaltung die Möglichkeit die Zugriffskontrolle über Regeln auf verschiedenen Plattformen einzuhalten. Ein wichtiger Teil von \ac{IAM} ist sicherzustellen, dass die Nutzer einen sicheren Zugriff auf die Ressourcen haben und auch nur auf die Ressourcen, die sie benötigen, um ihre Arbeit zu erledigen. \cite{Virg07} (S. 3)
+Die Virginia IT Agency beschreibt IAM wie folgt: \textit{"`Identity management is the capability to manage all user accounts and profiles that can be identified with each person across the IT environment via user roles and business rules. Access management is the ability to manage access control policies across multiple platforms. (...) An integral part of identity management is to ensure that users have secure, convenient access to the resources needed (and only the resources needed) to perform their work."'} \cite{Virg07} (S.3)
+\newline
+\newline
+Oder übersetzt:
+\newline
+\newline
+Das \ac{IAM} ist eine Möglichkeit, sämtliche Nutzer und Profile, welche man zu den jeweiligen Personen über die IT-Umgebung über Nutzerrollen und Businessregeln zu ordnen kann, zu handhaben. Dabei ist die Zugriffverwaltung die Möglichkeit die Zugriffskontrolle über Regeln auf verschiedenen Plattformen einzuhalten. Ein wichtiger Teil von \ac{IAM} ist sicherzustellen, dass die Nutzer einen sicheren Zugriff auf die Ressourcen haben und auch nur auf die Ressourcen, die sie benötigen, um ihre Arbeit zu erledigen. \cite{Virg07} (S.3)
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/IAM.PNG}
  \caption{Übersicht von IAM \cite{Moha19}}
  \label{fig:IAM}
 \end{figure}
-Im Bild (\ref{fig:IAM}) kann man erkennen, dass wenn ein Nutzer oder Programm Zugriff auf eine Ressource möchte, dieser die Identifizierung, Authentifizierung, Autorisierung, sowie Rechtschaffenheit vorlegen und einhalten muss. \cite{Moha19}
-Wenn der Nutzer Lucas Stumm beispielsweise die Daten vom Host haben möchte, muss dieser durch verschiedene Schritte gehen.
-Als Erstes muss sich dieser Identifizieren mittels eines Nutzernamens und Passworts.
+Im Bild (\ref{fig:IAM}) kann man erkennen, dass, wenn ein Nutzer oder Programm Zugriff auf eine Ressource möchte, dieser die Identifizierung, Authentifizierung, Autorisierung, sowie Rechtschaffenheit vorlegen und einhalten muss. \cite{Moha19}
+Wenn der Nutzer Lucas Stumm beispielsweise auf Daten des Hosts zugreifen möchte, muss dieser durch verschiedene Schritte gehen.
+Als Erstes muss sich dieser mittels Nutzernamens und Passworts identifizieren.
 Während dieser sich durch die Menüs manövriert , wird überprüft, ob Lucas Stumm überhaupt die Berechtigungen hat, diese Menüs sehen und auswählen zu können.
 Wenn dies der Fall ist, kann der Nutzer auf die Daten zugreifen.
 \newline
