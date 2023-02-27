@@ -1,7 +1,16 @@
 \chapter{Einleitung}
 \label{ch:intro}
+Die Helvetia ist eine schweizerische Versicherungsunternehmen, welche schon seit 1858 operiert. \cite{Helv}
+Über die Jahre hat die Helvetia den Host verwendet, um die Daten der Nutzer zu speichern und auswerten zu können.
+In dieser Zeit ist der Host stetig gewachsen mit der Helvetia.
+Dies hatte zur Folge, dass die Berechtigungsstruktur der Helvetia im Hostbereich immer komplexer wurde.
+Zudem wurde dieser nur selten überprüft und auf dem neuesten Stand gehalten.
+Dies hat das Problem verschlimmert.
+Wodurch die steigende Komplexität wird es schwieriger, mit diesem umzugehen.
+Dabei ist dies problematisch, da die Mitarbeiter über Berechtigungsstruktur rezertifiziert werden.
+Daher muss die Berechtigungsstruktur modernisiert werden, damit die Verwendung dieser keine Probleme darstellt.
 
-\section{Motivation}
+\section{Motivation für die Arbeit}
 \label{sec:intro:motivation}
 Viele Unternehmen verfügen über sensible Informationen, sei es zum Beispiel Versicherungen oder Krankenhäuser.
 Sensible Informationen können dabei Telefonnummern oder auch Namen und Adressen sein.
@@ -34,38 +43,10 @@ Um dies zu erreichen, gibt es verschiedene Methoden und Konzepte, die die Berech
 %
 % Section: Ziele
 %
-\section{Ziel der Arbeit}
-\label{sec:intro:goal}
-Diese wissenschaftliche Ausarbeitung ist eine Vergleichsarbeit, bei der verschiedene Konzepte verglichen werden.
-Dabei wird auf die folgende Fragestellung in dieser Arbeit eingegangen: \textit{inwieweit man bestehende Berechtigungsstrukturen im Hostbereich verändern und optimieren kann}.
-Dazu gibt es drei Unterfragen, welche verwendet werden, um die Problemstellung systematisch zu beantworten.
-
-\begin{itemize}
-  \item \textit{Welche Konzepte werden derzeit für Berechtigungsstrukturen verwendet, um diese sicher und übersichtlich zu gestalten?}
-  \item \textit{Wie unterscheiden sich die verschiedenen Konzepte?}
-  \item \textit{Womit kann man die verschiedenen Konzepte vergleichen?}
-\end{itemize}
-
-Die erste Unterfrage wird durch eine Recherche mit verschiedenen Arbeiten im Bereich der Berechtigungsstruktur beantwortet.
-Dies soll einen Überblick zum Stand der Technik geben.
-Anschließend wurden mehrere Befragungen durchgeführt, um die bestehenden Konzepte nach den Wünschen der Befragten anzupassen.
-Darauf basierend werden die bestehenden Methoden bewertet und verglichen.
-Dies beantwortet die zweite Unterfrage mithilfe des erstellten Vergleiches.
-\newline
-Um die dritte Frage zu beantworten, wird ein Schema verwendet, welches als eine Hilfestellung zur Konzeptauswahl dienen wird.
-Zum Schluss wird eine Alternative zum bestehenden System vorgestellt.
-In der Grafik \ref{gif:vorgehen} ist der Aufbau der Arbeit schematisch dargestellt.
-\newpage
-\begin{figure}[h!]
-\hspace*{-3cm}
- \centering
- \includegraphics[width=1.5\textwidth]{gfx/Picture/Vorgehen.PNG}
- \caption{Aufbau der Arbeit}
- \label{fig:vorgehen}
-\end{figure}
-\newpage
-\section{Ursache-Wirkungs-Diagramm}
+\section{Problem Spezifikation}
 \label{sec:intro:UWD}
+Für die Untersuchung der Probleme im Hostbereich wurden verschiedene Stakeholder interviewed und befragt.
+Die gesammelten Ergebnisse bilden das folgende Ursache-Wirkungs-Diagramm in der Grafik (\ref{fig:Fisch})
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/Fisch.PNG}
@@ -94,3 +75,45 @@ Dies ist zum Beispiel der Fall, wenn ein Account wieder aktiviert wird oder bei 
 Denn wenn es diese gäbe, dürfte es keine rekursiven Beziehungen geben.
 Es fehlt auch eine allgemeine Konvention, wie die Profile in den verschiedenen Fachbereichen funktionieren.
 Dies sorgt dafür, dass es die Mitarbeiter schwerer haben alle Verbindungen zu verstehen und macht die gesamte Struktur komplexer.
+\newline
+Dies sind die bestehenden Ursachen, warum das aktuelle Problem mit der Berechtigungsstruktur im Host besteht.
+Um das Problem beheben zu können, müssen einige dieser Unterprobleme behoben werden.
+Da sowohl das Management noch der Mensch geändert werden kann, muss dementsprechend die Methode angepasst werden.
+Dabei sind die Faktoren fehlende Kontrolle und fehlende Konvention, welche die geändert werden können.
+\newpage
+
+\section{Ziel der Arbeit}
+\label{sec:intro:goal}
+Diese wissenschaftliche Ausarbeitung ist eine Vergleichsarbeit, bei der verschiedene Konzepte verglichen werden.
+Dabei wird auf die folgende Fragestellung in dieser Arbeit eingegangen: \textit{inwieweit man bestehende Berechtigungsstrukturen im Hostbereich verändern und optimieren kann}.
+Dazu gibt es drei Unterfragen, welche verwendet werden, um die Problemstellung systematisch zu beantworten.
+
+\begin{itemize}
+  \item \textit{Welche Konzepte und Standards werden derzeit für Berechtigungsstrukturen verwendet, um diese sicher und übersichtlich zu gestalten?}
+  \item \textit{Wie unterscheiden sich die verschiedenen Konzepte?}
+  \item \textit{Womit kann man die verschiedenen Konzepte vergleichen?}
+\end{itemize}
+
+Die erste Unterfrage wird durch eine Recherche mit verschiedenen Arbeiten im Bereich der Berechtigungsstruktur beantwortet.
+Dabei werden auch die Best-Practise von verschiedenen Unternehmen betrachtet und analysiert.
+Außerdem werden die Berechtigungsstrukturen von Datenbanken beleuchtet.
+Dies soll einen Überblick zum Stand der Technik geben, um eine geeignete Lösung zu finden.
+\newline
+Anschließend wurden mehrere Befragungen durchgeführt, um die bestehenden Konzepte nach den Wünschen der Befragten anzupassen.
+Diese Befragten sind die betroffenden Stakeholder.
+Darauf basierend werden die bestehenden Methoden bewertet und verglichen.
+Der Vergleich findet mithilfe von Nutzwertanalysen statt.
+Dies beantwortet die zweite Unterfrage mithilfe des erstellten Vergleiches.
+\newline
+Um die dritte Frage zu beantworten, wird eine Analysetools verwendet, welche als eine Hilfestellung zur Konzeptauswahl dienen werden.
+Mit diesen werden die verschiedenen Konzepte mit Punkten bewertet, um das bessere Konzept zu ermitteln.
+Zum Schluss wird eine Alternative zum bestehenden System vorgestellt.
+In der Grafik \ref{fig:vorgehen} ist der Aufbau der Arbeit schematisch dargestellt.
+\newpage
+\begin{figure}[h!]
+\hspace*{-3cm}
+ \centering
+ \includegraphics[width=1.5\textwidth]{gfx/Picture/Vorgehen.PNG}
+ \caption{Aufbau der Arbeit}
+ \label{fig:vorgehen}
+\end{figure}
