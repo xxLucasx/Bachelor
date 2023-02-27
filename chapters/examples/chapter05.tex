@@ -1,20 +1,20 @@
 \chapter{Vergleich}
 \label{ch:chapter05}
 In diesem Kapitel werden die beiden Konzepte hierarchische Struktur und minimalistische Struktur mittels einer Nutzwertanalyse betrachtet.
-Diese sollen helfen herauszufinden, welches der beiden Konzepte die vorher genannten Kriterien am besten erfüllt.
+Diese soll dabei helfen herauszufinden, welches der beiden Konzepte die vorher genannten Kriterien am besten erfüllt.
 Dabei werden die Ergebnisse der Prioritätsanalyse verwendet und basierend auf dem Erfolg, welches das Konzept für das jeweilige Kriterium hat, verrechnet und addiert.
 Das Konzept mit einem höheren Wert erfüllt mehr die Kriterien als das andere.
-Zum Abschluss wird die Alternative \ac{RACF} auf ihre Vor- und Nachteile betrachtet.
+Zum Abschluss wird als Alternative \ac{RACF} auf ihre Vor- und Nachteile betrachtet.
 
 \section{Nutzwertanalyse}
 \label{sec:chapter05:Nutz}
 Für die Nutzwertanalyse müssen der jeweilige \ac{TN} bestimmt werden.
-Dies wird mittels \ac{Gf} mal der \ac{Zf} gemacht.
+Dies wird mittels \ac{Gf} multipliziert mit dem \ac{Zf} gemacht.
 Daraus bildet sich der \ac{TN} und die Summe davon generiert den \ac{GN}.
 Der höhere \ac{GN} zeigt, dass dieses Konzept einen höheren Nutzen hat.
 Anzumerken dabei ist, dass wenn der jeweilige \ac{GN} zu ähnlich ist, dass weitere Schritte vorgenommen werden sollen, um eine eindeutige Rangfolge zu erschaffen.
 Für die \ac{Zf} wurde wieder ein vier Punktesystem ausgewählt.
-Die Tabelle (\ref{fig:Ziel}) zeigt, was die verschiedenen Zahlen bedeuten. \cite{BdIufH}
+Die Tabelle (\ref{fig:Ziel}) zeigt, was die verschiedenen Ziffern bedeuten. \cite{BdIufH}
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/Ziel.PNG}
@@ -29,7 +29,7 @@ Die Tabelle (\ref{fig:Ziel}) zeigt, was die verschiedenen Zahlen bedeuten. \cite
  \label{fig:Nutz}
 \end{figure}
 
-Wie in der Grafik erkennbar ist, ist der \ac{GN} zwischen den beiden Faktoren bei $70$.
+Wie in der Grafik (\ref{fig:Nutz}) erkennbar ist, ist der \ac{GN} zwischen den beiden Faktoren bei $70$.
 Da der Unterschied zu klein ist, werden die Wertmaßstäbe weiter verfeinert.
 Deswegen wird die \ac{Zf} verdoppelt, um einen eindeutigeren Unterschied zu erkennen.
 Dadurch ändert sich die Punkteskala und die Tabelle wie folgt:
@@ -61,7 +61,7 @@ Deshalb hat es wie Performance vier Punkte erhalten.
 Für die Hierarchie hat die Struktur nur einen Punkt bekommen, weil es bei diesem Punkt darum ging, die Hierarchie so stark wie möglich zu verringern.
 Es ist besser als die vorherige Hierarchie, aber dennoch sehr hierarchisch.
 Die \ac{K/W} haben nur vier Punkte bekommen, da nach der Entwicklung der Profile, diese nicht mehr geändert werden sollen.
-Die Implementierung hat lediglich zwei Punkte bekommen, da diese aufwendig ist.
+Die Implementierung hat lediglich zwei Punkte bekommen, da diese aufwändig ist.
 \newline
 \newline
 Nachdem die \ac{Zf} erweitert wurde, haben sich die Werte wie folgt verändert.
@@ -76,23 +76,22 @@ Die Hierarchie hat vier Punkte bekommen, da die Hierarchie, wenn auch nur minima
 Dies würde nur drei Punkte geben, aber da auch die Hierarchiestufen auf vier limitiert wurden, hat dies einen weiteren Punkt gegeben.
 \ac{K/W} hat nur sieben statt acht Punkte bekommen, da dieses Konzept, trotz dessen, dass es nicht geändert werden soll, in einem regelmäßigen Zyklus gewartet werden muss.
 Dies liegt daran, dass man überprüfen muss, ob nicht ein Entwickler aus Faulheit die Struktur geändert hat.
-Daher ist es eine hervorragende Lösung, aber dennoch muss dies berücksichtigt werden.
+Daher ist es eine hervorragende Lösung, aber dennoch müssen die o.g. Punkte berücksichtigt werden.
 \newline
 \newline
-Zusammenfassend hat das Konzept der hierarchischen Struktur viele positive Aspekte.
-Unter diese Fallen zum Beispiel die erhöhte Performance sowie die Rekursion und die Übersichtlichkeit.
+Zusammenfassend hat das Konzept der hierarchischen Struktur viele positive Aspekte, u.a. die erhöhte Performance sowie die Rekursion und die Übersichtlichkeit.
 Auf der anderen Seite ist dieses Konzept weiterhin sehr hierarchisch und die Implementierung ist aufwendig.
 Dies würde einiges an Personentagen sowie weiteres Geld kosten.
 
 \section{Vor/Nachteile Minimalistisch}
 \label{sec:chapter05:Minimalistisch}
-Das minimalistische Konzept hat für die Performance zwei, die Übersichtlichkeit eins, die Rekursion vier, die Hierarchie vier, die \ac{K/W} zwei und die Implementierung vier Punkte erhalten.
+Das Konzept der minimalistische Struktur hat für die Performance zwei, die Übersichtlichkeit eins, die Rekursion vier, die Hierarchie vier, die \ac{K/W} zwei und die Implementierung vier Punkte erhalten.
 Durch die verringerte Struktur hat sich die Performance ebenso verbessert, aber dies ist keine permanente Lösung, da ein Ansteigen der Profilanzahl diesen Bonus nichtig macht.
 Aus diesem Grund hat es nur zwei Punkte bekommen.
-Die Übersichtlichkeit hat nur einen Punkt erlangt.
+Bei der Übersichtlichkeit hat nur einen Punkt erlangt.
 Auch wenn durch das Entfernen der Hierarchie weniger Verwirrung herrscht, ist es dennoch sehr unübersichtlich, wenn alle Berechtigungen, mit Ausnahme der Standardberechtigungen, direkt am Profil hängen.
 Da es keine tiefe Hierarchie mehr gibt, ist es auch unmöglich, dass es eine Rekursion gibt.
-Weshalb dieses Konzept in diesem Punkt die maximale Anzahl von Punkten erlangt.
+Deshalb erlangt dieses Konzept in diesem Punkt die maximale Anzahl von Punkten.
 Wie schon angesprochen geht es bei dem Punkt Hierarchie darum, die Hierarchie so stark wie möglich zu reduzieren und dieses Konzept hat die Hierarchiestruktur auf ein Minimum gebracht. Somit erhält es vier Punkte.
 Die \ac{K/W} haben zwei Punkte erlangt, da regelmäßig überprüft werden muss, ob Entwickler nicht aus verschiedenen Gründen zusätzliche Profile hinzufügen.
 Dies ist eine Sorge, da genau dies zur unübersichtlichen Berechtigungsstruktur geführt hat, die die Helvetia aktuell hat.
@@ -130,11 +129,11 @@ Zudem wäre dies ein Schritt, um sich von der Welt des Hosts weiter zu distanzie
 Dies wäre ein positiver Aspekt, wenn das Unternehmen sich in der Zukunft vom Host lösen möchte.
 \newline
 \newline
-Für den Wechsel zwischen der DB2 Tabelle zu \ac{RACF} würden die Profile, Nutzer und Berechtigungen wie folgt geändert werden:
+Für den Wechsel von der DB$2$-Tabelle zu \ac{RACF} würden die Profile, Nutzer und Berechtigungen wie folgt geändert werden:
 \begin{itemize}
 	\item Die HDM-Vorgangsprofile werden mittels Data Control Groups dargestellt
 	\item Die Berechtigungen werden durch General Resource Profiles abgebildet
-	\item Die Nutzer werden anhand von Holding Group verkörpert
+	\item Die Nutzer werden anhand von Holding Groups verkörpert
 \end{itemize}
 Die Data Control Groups fungieren als ein Schnittpunkt für die Daten, welche vor nicht autorisierten Zugriff geschützt werden sollen. \cite{IBMdcg}
 Die General Ressource Profiles bieten einen Schutz an für Computer Ressourcen sowie andere Datenformate wie zum Beispiel Berechtigungen. \cite{IBMgrp}
@@ -148,20 +147,20 @@ Auf der anderen Seite bestehen jedoch die folgenden Probleme:
 	\item Transfer der Daten
 	\item Schulung des Personals
 \end{itemize}
-Die aktuelle DB$2$ Tabelle verfügt über verschiedene Schnittstellen für die Abfrage von Berechtigungen.
+Die aktuelle DB$2$-Tabelle verfügt über verschiedene Schnittstellen für die Abfrage von Berechtigungen.
 Wenn diese durch das \ac{RACF} ersetzt werden sollen, müssen diese durch neue Schnittstellen ersetzt werden.
-Im Gespräch mit den IT-Spezialisten wurde gesagt, dass dies ein großes Problem aufweist, da dafür eine spezielle Application Programming Interface entwickelt werden müsste.
-Dies würde neben dem normalen Wechsel von den DB$2$ Tabellen zu \ac{RACF} für weitere Kosten sorgen.
+Im Gespräch mit den IT-Spezialisten wurde gesagt, dass dies ein großes Problem darstellt, da dafür eine spezielle Application Programming Interface entwickelt werden müsste.
+Dies würde neben dem normalen Wechsel von den DB$2$-Tabellen zu \ac{RACF} für weitere Kosten sorgen.
 \newline
 Ein anderes Problem ist auch der Transfer der bestehenden Daten in das \ac{RACF}.
 Für diesen Prozess müsste auch hier eine Schnittstelle entwickelt werden, welche bei dem Transfer die Daten in das richtige Dateiformat transformiert.
-Neben den steigenden Kosten bestehen auch das Risiko, dass bei der Transformation ein Fehler geschieht.
+Neben den steigenden Kosten besteht auch das Risiko, dass bei der Transformation ein Fehler geschieht.
 \newline
 Selbst wenn die vorherigen beiden Punkte kein Problem darstellen, muss dennoch das gesamte Personal, welches mit den Tabellen gearbeitet hat, für das \ac{RACF} geschult werden.
-Dies würde wieder Geld und Zeit kosten.
+Dies würde weitere Personentage kosten.
 Aufgrund dieser Faktoren ist der Wechsel in das \ac{RACF} nicht ratsam, da zu viele große Probleme bestehen, welche Geld und Zeit kosten werden.
 \newline
-Sollte sich jedoch doch für das \ac{RACF} entschieden werden, würde der Algorithmus wie folgt aussehen:
+Sollte Helvetia sich dennoch für das \ac{RACF} enscheiden, würde der Algorithmus wie in der Grafik (\ref{fig:racf}) aussehen:
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/racf.PNG}

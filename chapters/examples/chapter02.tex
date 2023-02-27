@@ -219,19 +219,18 @@ Die Entwickler, die bisher an der Berechtigungsstruktur gearbeitet haben, haben 
 \section{Ist-Zustand}
 \label{sec:chapter03:Ist-Zustand}
 Der Ist-Zustand der Berechtigungsstruktur der Helvetia ist eine chaotische Organisation.
-Zum Beispiel kann man im Bild \ref{fig:Teil} erkennen, dass das Profil PGE20 eine rekursive Beziehung hat.
+Zum Beispiel kann man im Bild \ref{fig:Teil} erkennen, dass das Profil PGE$20$ eine rekursive Beziehung hat.
 Außerdem gibt es viele redundante Profile innerhalb eines Profils.
-Das Profil Azub enthält zum Beispiel die Berechtigung PNE10, welche zwölfmal vergeben wird.
+Das Profil Azub enthält zum Beispiel die Berechtigung PNE$10$, welche zwölfmal vergeben wird.
 Dies macht es schwierig festzustellen, wer alles eine spezifische Berechtigung/Profil hat, da diese an verschiedenen Stellen vorkommt.
-\newline
-Zusätzlich gibt es Profile mit aufsteigenden Nummern wie zum Beispiel PNE10 und PNE20.
-Dabei besteht das Problem, dass diese manchmal einen Bezug zueinander und manchmal gar keinen haben.
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/Beispiel.PNG}
  \caption{Ausschnitt der Berechtigungsstruktur}
  \label{fig:Profile}
 \end{figure}
+Zusätzlich gibt es Profile mit aufsteigenden Nummern wie zum Beispiel PNE$10$ und PNE$20$.
+Dabei besteht das Problem, dass diese manchmal einen Bezug zueinander und manchmal gar keinen haben.
 Wie man in der Grafik \ref{fig:Profile} erkennen kann, hat das Profil PPV00 einen Bezug zu PPV10, PPV30 und PPV40, aber PPV54 hat gar keinen Bezug dazu.
 Zudem sind dort Profile von anderen Fachbereichen vorhanden, welches das Risiko auf rekursive Beziehung erhöht und es schwierig macht, die Struktur zu verstehen.
 In diesem Fall fehlt es an einer Richtlinie, welche vorgibt, wie die Beziehung zwischen diesen Profilen sein soll.
