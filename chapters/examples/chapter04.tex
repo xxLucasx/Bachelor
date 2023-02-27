@@ -25,21 +25,21 @@ Dabei wird überprüft, ob die Person auch wirklich die ist, als welche diese si
 Um dies sicherzustellen, gibt es verschiedene Methoden.
 Ein Nutzername mit einem Passwort ist hierbei die gängigste Methode, um dies zu tun. Dies wird von den meisten Webseiten und Computern verwendet.
 Um die Authentifizierung sicherer zu gestalten, werden mehrere Faktoren berücksichtigt, die eine Person identifizieren.
-Dies kann zum Beispiel durch einen Fingerabdruck stattfinden. \cite{IamIEEE, S.1482} 
+Dies kann zum Beispiel durch einen Fingerabdruck stattfinden. \cite[1482]{IamIEEE} 
 \newline
 \newline
 2. Berechtigungsvergabe
 \newline
 Die Berechtigungsvergabe beschäftigt sich damit, welche Berechtigungen jeder Nutzer bekommt.
 Dies wird mittels Autorisierungsrichtlinien gesichert, damit die Nutzer nur Zugriff auf die Ressourcen und Dienste haben, welche sie benötigen.
-Dies wird mithilfe von Profilen erreicht, welche ihnen von der Organisation zugewiesen werden. \cite{IamIEEE, S.1482} 
+Dies wird mithilfe von Profilen erreicht, welche ihnen von der Organisation zugewiesen werden. \cite[1482]{IamIEEE} 
 \newline
 \newline
 3. Identitätsvergabe
 \newline
 Die Identitätsvergabe sorgt dafür, dass der Nutzer eine digitale ID oder einen Account erhält.
 Wenn ein Mitarbeiter bei einem Unternehmen arbeitet, erhält dieser eine digitale Identität, um auf die Ressourcen des Unternehmens zugreifen zu können.
-Dabei ist auch wichtig, dass der Mitarbeiter diese digitale Identität wieder verliert, wenn dieser das Unternehmen verlässt oder an einer anderen Stelle im Unternehmen arbeitet und seine alte digitale Identität nicht mehr benötigt.
+Dabei ist auch wichtig, dass der Mitarbeiter diese digitale Identität wieder verliert, wenn dieser das Unternehmen verlässt oder an einer anderen Stelle im Unternehmen arbeitet und seine alte digitale Identität nicht mehr benötigt. \cite[1482]{IamIEEE}
 \newline
 \newline
 4. Föderierte Identität
@@ -48,20 +48,20 @@ Dabei handelt es sich darum, dass die digitalen Identitäten über verschiedene 
 Dafür werden die Informationen der digitalen Identität gespeichert.
 Dies hat den Vorteil, dass der Nutzer sich nur einmal anmelden muss, um auf sämtliche seiner Ressourcen zugreifen zu können.
 Dabei werden Protokolle wie SAML, OAuth oder OpenID verwendet.
-Die Folge dadurch ist, dass der Nutzer sich nicht mehrere Passwörter sowie Accounts merken muss. {IamIEEE, S.1482} 
+Die Folge dadurch ist, dass der Nutzer sich nicht mehrere Passwörter sowie Accounts merken muss. \cite[1482]{IamIEEE}
 \newline
 \newline
 5. Compliance Verwaltung
 \newline
 Die Compliance Verwaltung überprüft die Authentifizierungs- und Zugriffsaufzeichnungen, um sicher zu stellen, dass die Richtlinien und Sicherheitsstandards eingehalten wurden.
 Diese Überprüfung ist notwendig für effektive Zugriffsregeln.
-Zudem werden diese für Audits benötigt. \cite{IamIEEE, S.1482} 
+Zudem werden diese für Audits benötigt. \cite[1482]{IamIEEE} 
 \newline
 \newline
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/IAMISH.PNG}
- \caption{IAM für Cloud Dienste \cite{Moha19, S.3}}
+ \caption{IAM für Cloud Dienste \cite[3]{Moha19}}
  \label{fig:IMAISH}
 \end{figure}
 Dies ist ein Beispiel, wie die oben genannten Punkte umgesetzt werden können.
@@ -71,16 +71,16 @@ Die Berechtigungen können dabei auch mittels Profile zusammengefasst werden.
 Die Grafik (\ref{fig:IMAISH}) stellt dies dar.
 \newline
 Dabei kann dies auf verschiedenen Wegen umgesetzt werden, da dieselbe Lösung für gewisse Fälle nicht funktioniert.
-Zum Beispiel beschreibt \cite{Cal17, S.208} das Problem, wie die United States of America am besten mit ihren Verbündeten kooperieren sollten.
+Zum Beispiel beschreibt \cite[208]{Cal17} das Problem, wie die United States of America am besten mit ihren Verbündeten kooperieren sollten.
 Da es sich dabei um sensitive Informationen handelt, welche an verschiedene Partner vermittelt werden, muss der Zugriff reguliert werden.
 Auch haben die verschiedenen Länder unterschiedliche Gesetze, worauf geachtet werden muss. 
-Deswegen gibt es keine universelle Methode, um eine solche Herausforderung zu lösen. \cite{Cal17, S.208}
+Deswegen gibt es keine universelle Methode, um eine solche Herausforderung zu lösen. \cite[208]{Cal17}
 
 
 \subsection{Vergleich mit Datenbanken}
 \label{sec:chapter04:DB}
 Die Helvetia verwendet zum Speichern der Informationen für die Berechtigungsstruktur sogenannte HV-Tabellen.
-Bei diesen HV-Tabellen handelt es sich, um DB2-Tabellen.
+Bei diesen HV-Tabellen handelt es sich, um DB$2$-Tabellen.
 Zudem besteht eine Ähnlichkeit zwischen dem Nutzer und dem Profil in der Berechtigungsstruktur im Vergleich zum Account und der Gruppe in Datenbanken.
 Deswegen wird betrachtet, wie der Standard von Accounts und Gruppen innerhalb von Datenbanken ist.
 \newline
@@ -91,7 +91,7 @@ GRANT...ON...TO...[GRANT OPTION]
 \newline
 \newline
 Dabei wird für die spezifische Berechtigung, zum Beispiel eine View und einen Account oder eine Gruppen angegeben.
-Zudem kann auch hinzugefügt werden, ob die Rolle die Berechtigung hat, anderen Accounts die Berechtigungen zu geben.\cite{Ram09, S.474-475}
+Zudem kann auch hinzugefügt werden, ob die Rolle die Berechtigung hat, anderen Accounts die Berechtigungen zu geben.\cite[474-475]{Ram09}
 \newline
 Wenn man sich zum Beispiel das Bild (\ref{fig:Berch}) ansieht, könnte der Befehl wie folgt aussehen:
 \newline
@@ -238,13 +238,13 @@ Zudem wurde kann auch erkannt werden, dass die Hierarchie verringert wurde.
 Das aktuelle Verfahren, das verwendet wird, um die Berechtigung zu überprüfen, gleicht einem Insertion-Sort.
 Dabei wird jedes einzelne Profil durchgegangen, bis die gewünschte Berechtigung gefunden wurde.
 Dies weißt eine Komplexität von n im Optimalfall und $n^2$ im schlimmsten Falle auf.
-n beschreibt dabei die Anzahl von Profilen/Berechtigungen, die der Algorithmus durchlaufen muss. \cite{log, S.12, weblogMer}
+n beschreibt dabei die Anzahl von Profilen/Berechtigungen, die der Algorithmus durchlaufen muss. \cite[12]{log} \cite{weblogMer}
 \newline
 Bei der neuen Struktur kann ein Merge-Sort genutzt werden.
 Dabei achtet der Algorithmus auf bestimmte Eigenschaften der Profile.
 Würde zum Beispiel verlangt werden, dass der Nutzer eine Berechtigung für PNE10 hat, würde nur der Baum von PNE durchsucht werden und in diesem Falle direkt PNE10 ausgewählt werden.
 Dieser Suchalgorithmus ist komplexer als der Insertion-Sort. Er ist jedoch deutlich effizienter bei einer größeren Menge von Profilen und Berechtigungen.
-Die Komplexität beläuft sich bei ihm auf n*log(n) im besten, wie auch im schlechtesten Fall. \cite{log, S.12, weblogMer} 
+Die Komplexität beläuft sich bei ihm auf n*log(n) im besten, wie auch im schlechtesten Fall. \cite[12]{log} \cite{weblogMer}
 \newline
 Wenn beispielsweise n = $100$ wäre, würden die Ergebnisse wie folgt aussehen:
 \newline
