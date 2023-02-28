@@ -10,7 +10,7 @@ Anschließend werden die Probleme aus den Befragungen quantifiziert, um daraus d
 \label{sec:chapter04:Konzeptentwicklung}
 In diesen Unterkapiteln wird betrachtet, was der Stand der Technik ist.
 Dabei werden die Sicherheitsmaßnahmen von \ac{IAM} erläutert sowie berücksichtigt, dass es nicht die eine Lösung für das Problem gibt.
-Zudem wird auch erläutert wie die Berechtigungsstruktur innerhalb von Datenbanken funktioniert, um diese als einen Vergleich zu nutzen.  
+Zudem wird auch erläutert, wie die Berechtigungsstruktur innerhalb von Datenbanken funktioniert, um diese als einen Vergleich zu nutzen.  
 
 \subsection{Stand der Technik}
 \label{sec:chapter04:Stand}
@@ -21,7 +21,7 @@ Dabei wird mittels \ac{IAM} die Identität und der Zugriff reguliert.
 \newline
 1. Authentifizierung der Person
 \newline
-Dabei wird überprüft, ob die Person auch wirklich die ist, als welche diese sich ausgibt.
+Dabei wird überprüft, ob die Person auch wirklich, die ist, als welche diese sich ausgibt.
 Um dies sicherzustellen, gibt es verschiedene Methoden.
 Ein Nutzername mit einem Passwort ist hierbei die gängigste Methode, um dies zu tun. Dies wird von den meisten Webseiten und Computern verwendet.
 Um die Authentifizierung sicherer zu gestalten, werden mehrere Faktoren berücksichtigt, die eine Person identifizieren.
@@ -135,7 +135,7 @@ Eine sichere Berechtigungsstruktur ist daher nötig, um diese Anforderung der \a
 Diese ist nämlich verletzt, wenn Daten, für die das Unternehmen verantwortlich ist, in ihrer Vertraulichkeit, Verfügbarkeit oder Integrität verletzt werden.
 Deswegen sind Mitarbeiter, die mehr Berechtigungen haben als jene, die sie wirklich benötigen, eine Risikostelle. \cite{EuroW}
 \newline
-Daher sollte die neue Berechtigungsstruktur so gestaltet werden, dass die Verständlichkeit, Verfügbarkeit und INtegrität der Daten nicht verletzt werden können.
+Daher sollte die neue Berechtigungsstruktur so gestaltet werden, dass die Verständlichkeit, Verfügbarkeit und Integrität der Daten nicht verletzt werden können.
 
 \section{Herausforderung und Anforderungen}
 \label{sec:chapter04:Herausforderung}
@@ -213,10 +213,16 @@ Die Berechtigungen, die verloren gehen, würden eigene Profile bekommen und so �
 \end{itemize}
 Diese Konventionen sollen verhindern, dass die Struktur weiter wächst und dass man ohne Probleme feststellen kann, was für Berechtigungen ein Profil hat.
 Zudem hat es den Vorteil, dass rekursive Beziehungen, sowie redundante Berechtigungsvergabe nicht möglich sind, da die Profile nur noch Profile oder Berechtigungen enthalten, die nicht mehr auf sich gegenseitig zeigen.
+Die Verschachtelung der Profile sorgt nämlich dafür, dass die Gesamtstruktur unübersichtlich wird. \cite[21]{RuB}
 Dadurch soll auch die Übersichtlichkeit verbessert und das Hierarchieproblem auf ein Minimum gebracht werden.
 Außerdem sollte die Performance verbessert werden.
 Dabei helfen verschiedene Faktoren, um diese zu verbessern.
 Die reduzierte der rekursiven Beziehungen, sowie die Vereinfachung der Struktur, mit der Reduktion der Berechtigungen, machen die Berechtigungsstruktur performanter.
+Diese Standardprofile sollten idealerweise, die einzigen sein, welche die Nutzer benötigen. \cite[21]{RuB}
+Leider ist dies nicht in Praxis nicht immer umsetztbar, da die Aufgaben der Nutzer sich ändern können.
+Trotzdem versucht das Konzept dem Prinzip vom Least Privilege umzusetzen.
+Dabei geht es darum, dass der Nutzer nur die Berechtigungen erhält, welche dieser benötigt. \cite[1]{LePr}
+
 \begin{figure}[h!]
 \hspace*{-2cm}
  \centering
@@ -231,7 +237,7 @@ Die reduzierte der rekursiven Beziehungen, sowie die Vereinfachung der Struktur,
 \end{figure}
 Das Bild (\ref{fig:AltBer}) zeigt eine bestehende Berechtigungsstruktur.
 (\ref{fig:NeuBer}) hingegen bildet die Struktur nach den neuen Konventionen dar.
-Diese beide Bilder wurden den IT-Spezialisten gezeigt, die befragt wurden.
+Diese beiden Bilder wurden den IT-Spezialisten gezeigt, die befragt wurden.
 Einheitlich haben alle befragten IT-Spezialisten angegeben, dass Sie die neue Struktur übersichtlicher finden und diese einfacher zu verstehen ist.
 Zudem wurde kann auch erkannt werden, dass die Hierarchie verringert wurde.
 \newline
@@ -312,6 +318,7 @@ Die Grafik (\ref{fig:Hier}) stellt dies als Ablaufdiagram dar.
  \label{fig:Hier}
 \end{figure}
 \newpage
+
 \section{Konzept minimalistische Struktur}
 \label{sec:chapter04:minimal}
 Im Gespräch der IT-Spezialisten kam der Vorschlag auf, dass man einen minimalistischen Ansatz nutzen könnte.
@@ -333,8 +340,10 @@ Dabei haben die IT-Spezialisten folgende Vorschläge für die Konventionen gemac
 Die IT-Spezialisten fanden auch, dass dies übersichtlicher als die bestehende Struktur ist.
 Dieses Konzept hat den Vorteil, dass es kaum noch eine Hierarchie gibt.
 Dadurch entfällt das Problem der Rekursion sowie redundanter Berechtigungsvergabe.
+Ebenso wird das Prinzip des Least Privilege erfüllt, da der Nutzer die zusätzlichen Berechtigungen selbst anfordern muss.
 Die \ac{K/W} ist einfacher in diesem Sinne, da nur überprüft werden muss, ob die Standardprofile über die notwendigen Berechtigungen verfügen.
-Auf der anderen Seite ist die Entwicklung aufwendig, da erst einmal bestimmt werden muss, welche Berechtigungen für einen Fachbereich notwendig sind. Ebenso muss sichergestellt werden, dass alle Nutzer ihre Berechtigungen beibehalten.
+Auf der anderen Seite ist die Entwicklung aufwendig, da erst einmal bestimmt werden muss, welche Berechtigungen für einen Fachbereich notwendig sind.
+Ebenso muss sichergestellt werden, dass alle Nutzer ihre Berechtigungen beibehalten.
 Es besteht nämlich die Gefahr, dass bei dem Wechsel Berechtigungen verloren gehen.
 \newline
 \newline
