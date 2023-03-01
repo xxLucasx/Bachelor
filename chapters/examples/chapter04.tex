@@ -159,6 +159,7 @@ Die Übersichtlichkeit dazu ist weniger wichtig.
 Die Performance und die Rekursion haben jeweils zwei Punkte bekommen, da eine performante Struktur keine rekursiven Beziehungen enthält.
 \ac{K/W} sowie Performance haben jeweils zwei Punkte bekommen.
 Dies liegt daran, dass neben der Performance die \ac{K/W} elementar sind, da eine Struktur, die sich kaum warten lässt, mehr Ressourcen in der Zukunft kosten wird.
+Dabei haben die Performance und Hierarchie jeweils zwei Punkte erhalten.
 Zwischen der Übersichtlichkeit und der Rekursion wurden der Rekursion drei Punkte gegeben und der Übersichtlichkeit nur einen, weil rekursive Strukturen unübersichtlicher sind und es daher wichtiger ist, dass es keine gibt.
 Übersichtlichkeit und Hierarchie haben beide zwei Punkte erhalten, da beide eine gleiche Rolle bei der Lesbarkeit der Struktur spielen.
 Übersichtlichkeit sowie Rekursion und Hierarchie bekommen einen Punkt im Vergleich zu \ac{K/W}, weil dieser Punkt langfristig eine wichtige Rolle spielt, und die anderen drei Punkte sollten keine Probleme sein, sofern sich an die Konventionen gehalten wird, damit die Struktur wartbar bleibt.
@@ -195,10 +196,10 @@ Das erste Konzept für die Struktur ist wie folgt aufgebaut.
 Wie man in der Grafik (\ref{fig:Teil}) aus dem zweiten Kapitel erkennen kann, gibt es bei der aktuellen Berechtigungsstruktur keine Struktur.
 Um dementsprechend die genannten Problem zu beheben, wurde die neue Struktur (\ref{fig:Struktur}) entwickelt.
 Um die \ac{K/W} zu verbessern, wurden die folgenden Konventionen für dieses Konzept entwickelt.
-Es it dabei anzumerken dabei ist, dass die Durchsetzung und Implementierung dieser Konventionen trotzdem keinen unerheblichen Aufwand darstellt.
+Es ist dabei anzumerken, dass die Durchsetzung und Implementierung dieser Konventionen trotzdem keinen unerheblichen Aufwand darstellt.
 \begin{itemize}
 	\item Profile enthalten nur noch Profile oder Berechtigungen.
-	\item Die Berechtigungsstruktur soll nur noch eine Hierarchietiefe von maximal vier haben.
+	\item Die Berechtigungsstruktur soll nur noch eine Hierarchietiefe von maximal vier Ebenen haben.
 	\item Die erste Hierarchiestufe enthält das Standardprofil, welches dem Nutzer gegeben wird.
 	\item Die zweite Hierarchiestufe enthält die jeweiligen Sammellese- und -schreibprofile, die jeweils in die Fachbereiche getrennt sind.
 	\item Die dritte Hierarchiestufe enthält die individuellen Lese- und Schreibprofile.
@@ -237,7 +238,7 @@ Dabei geht es darum, dass der Nutzer nur die Berechtigungen erhält, welche dies
 \end{figure}
 Das Bild (\ref{fig:AltBer}) zeigt eine bestehende Berechtigungsstruktur.
 (\ref{fig:NeuBer}) hingegen bildet die Struktur nach den neuen Konventionen dar.
-Diese beiden Bilder wurden den IT-Spezialisten gezeigt, die befragt wurden.
+Diese beiden Bilder wurden den befragten IT-Spezialisten gezeigt.
 Einheitlich haben alle befragten IT-Spezialisten angegeben, dass Sie die neue Struktur übersichtlicher finden und diese einfacher zu verstehen ist.
 Zudem wurde kann auch erkannt werden, dass die Hierarchie verringert wurde.
 \newline
