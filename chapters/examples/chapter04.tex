@@ -100,7 +100,7 @@ GRANT UPDATE ON PKU$00$ TO USER$895$.
 \newline
 \newline
 Das würde in diesem Beispiel bedeuten, dass der Nutzer USER$895$ die Bearbeitungsberechtigung für die Ressource PKU00 erhalten hat.
-Dabei ergibt sich die Frage auf, was bevorugt verwendt werden sollte:
+Dabei ergibt sich die Frage auf, was bevorzugt verwandt werden sollte:
 \newline
 Eine individuelle Berechtigungsvergabe oder Gruppenvergabe für die Accounts.
 Microsoft hat folgendes als Best Practice definiert:
@@ -142,19 +142,19 @@ Daher sollte die neue Berechtigungsstruktur so gestaltet werden, dass die Verst�
 Bei der Recherche (\ref{ch:Recherche}) sind verschiedene Herausforderungen und Anforderungen aufgetreten.
 Um qualitativ ein Konzept entwickeln zu können, müssen diese Herausforderungen und Anforderungen aufgelistet und analysiert werden.
 Neben den genannten Punkten wurde der Punkt Implementierung hinzugefügt, da diese bei der Entscheidung der Konzepte elementar ist.
-Das Unternehmen muss dabei über die Kosten des neuen Konzepts und dessen Performance bewusst sein.
+Das Unternehmen muss sich dabei über die Kosten des neuen Konzepts und dessen Performance bewusst sein.
 \begin{itemize}
 	\item Performance der Tabellen erhöhen 
-	\item Übersichtlichkeit erhöhren (effizientere Verifizierung der Mitarbeiter)
+	\item Übersichtlichkeit erhöhen (effizientere Verifizierung der Mitarbeiter)
 	\item Rekursive Beziehungen verhindern
 	\item Hierarchien verringern
 	\item \ac{K/W}
 	\item Implementierung
 \end{itemize}
-Eine Quantifizierung findet mittels Prioritätsanalyse (\ref{fig:Prio}) statt, um festzustellen wie die Prioritäten der Konzepte zu bewerten sind. \cite{BdIufH}
+Eine Quantifizierung findet mittels Prioritätsanalyse (\ref{fig:Prio}) statt, um festzustellen, wie die Prioritäten der Konzepte zu bewerten sind. \cite{BdIufH}
 Bei der Prioritätsanalyse wurde sich für ein vier Punktesystem entschieden.
 \newline
-Im Vergleich zwischen der Performance und der Übersichtlichkeit, wurden der Performance drei Punkte gegeben und die Übersichtlichkeit hat nur einen Punkt erhalten, da die Performance eine der Grundanforderungen ist, weswegen die Berechtigungsstruktur geändert werden soll.
+Im Vergleich zwischen der Performance und der Übersichtlichkeit wurden der Performance drei Punkte gegeben und die Übersichtlichkeit hat nur einen Punkt erhalten, da die Performance eine der Grundanforderungen ist, weswegen die Berechtigungsstruktur geändert werden soll.
 Die Übersichtlichkeit dazu ist weniger wichtig.
 Die Performance und die Rekursion haben jeweils zwei Punkte bekommen, da eine performante Struktur keine rekursiven Beziehungen enthält.
 \ac{K/W} sowie Performance haben jeweils zwei Punkte bekommen.
@@ -213,15 +213,15 @@ Die Berechtigungen, die verloren gehen, würden eigene Profile bekommen und so �
 	\item Wenn ein Account reaktiviert wird, muss dieser rezertifiziert werden.
 \end{itemize}
 Diese Konventionen sollen verhindern, dass die Struktur weiter wächst und dass man ohne Probleme feststellen kann, was für Berechtigungen ein Profil hat.
-Zudem hat es den Vorteil, dass rekursive Beziehungen, sowie redundante Berechtigungsvergabe nicht möglich sind, da die Profile nur noch Profile oder Berechtigungen enthalten, die nicht mehr auf sich gegenseitig zeigen.
+Zudem hat es den Vorteil, dass rekursive Beziehungen sowie redundante Berechtigungsvergabe nicht möglich sind, da die Profile nur noch Profile oder Berechtigungen enthalten, die nicht mehr auf sich gegenseitig zeigen.
 Die Verschachtelung der Profile sorgt nämlich dafür, dass die Gesamtstruktur unübersichtlich wird. \cite[21]{RuB}
 Dadurch soll auch die Übersichtlichkeit verbessert und das Hierarchieproblem auf ein Minimum gebracht werden.
 Außerdem sollte die Performance verbessert werden.
 Dabei helfen verschiedene Faktoren, um diese zu verbessern.
-Die reduzierte der rekursiven Beziehungen, sowie die Vereinfachung der Struktur, mit der Reduktion der Berechtigungen, machen die Berechtigungsstruktur performanter.
+Die Reduktion der rekursiven Beziehungen, sowie die Vereinfachung der Struktur, mit der Reduktion der Berechtigungen, machen die Berechtigungsstruktur performanter.
 Diese Standardprofile sollten idealerweise, die einzigen sein, welche die Nutzer benötigen. \cite[21]{RuB}
-Leider ist dies nicht in Praxis nicht immer umsetztbar, da die Aufgaben der Nutzer sich ändern können.
-Trotzdem versucht das Konzept dem Prinzip vom Least Privilege umzusetzen.
+Leider ist dies in Praxis nicht immer umsetzbar, da die Aufgaben der Nutzer sich ändern können.
+Trotzdem versucht das Konzept das Prinzip vom Least Privilege umzusetzen.
 Dabei geht es darum, dass der Nutzer nur die Berechtigungen erhält, welche dieser benötigt. \cite[1]{LePr}
 
 \begin{figure}[h!]
@@ -240,7 +240,7 @@ Das Bild (\ref{fig:AltBer}) zeigt eine bestehende Berechtigungsstruktur.
 (\ref{fig:NeuBer}) hingegen bildet die Struktur nach den neuen Konventionen dar.
 Diese beiden Bilder wurden den befragten IT-Spezialisten gezeigt.
 Einheitlich haben alle befragten IT-Spezialisten angegeben, dass Sie die neue Struktur übersichtlicher finden und diese einfacher zu verstehen ist.
-Zudem wurde kann auch erkannt werden, dass die Hierarchie verringert wurde.
+Zudem wurde auch erkannt, dass die Hierarchie verringert wurde.
 \newline
 Das aktuelle Verfahren, das verwendet wird, um die Berechtigung zu überprüfen, gleicht einem Insertion-Sort.
 Dabei wird jedes einzelne Profil durchgegangen, bis die gewünschte Berechtigung gefunden wurde.
@@ -286,7 +286,7 @@ Die erste Möglichkeit besteht darin, dass sich eine Gruppe von Entwicklern an d
 Dies ist jedoch zeitaufwändig und es besteht ein hohes Potenzial, dass Fehler durch nachlässiges Arbeiten geschehen.
 \newline
 Die zweite Möglichkeit wäre ein Algorithmus zu schreiben, welcher dies automatisiert.
-Da weder die Zeit besteht noch die entsprechende Umgebung zum Testen eines Prototypen, kann die Entwicklung des Algorithmus innerhalb dieser Arbeit nur mithilfe Pseudocode stattfinden.
+Da weder die Zeit besteht, noch die entsprechende Umgebung zum Testen eines Prototypen vorhanden ist, kann die Entwicklung des Algorithmus innerhalb dieser Arbeit nur mithilfe von Pseudocode stattfinden.
 Dabei würde die Automatisierung wie folgt aussehen.
 \newline
 \newline
@@ -308,21 +308,21 @@ Für die Standardprofile werden die Profile überprüft, die viele Unterprofile 
 Wenn ein Profil XY viele Unterprofile hat, wird dieses zu einem Standardprofil.
 Die restlichen Profile werden zu Lese-/Schreibprofile.
 Die individuellen Sammelprofile werden basierend auf den Lese-/Schreibprofilen generiert.
-Die Verbindungen zwischen den bisherigen Profilen werden aufgebrochen und zu den neuen Sammelprofilen zugewiesen, welche mit dem Standardprofil verbunden sind.
-Anschließend werden auf redundante Profile und Berechtigungen überprüft, welche dann entfernt wird.
+Die Verbindungen zwischen den bisherigen Profilen werden aufgebrochen und den neuen Sammelprofilen zugewiesen, welche mit dem Standardprofil verbunden sind.
+Anschließend wird auf redundante Profile und Berechtigungen überprüft, welche dann entfernt werden.
 Dabei muss man aber zum Schluss begutachten, ob alle generierten Standardprofile wirklich Standardprofile sein sollten sowie ob die bestehende Anzahl ausreichend ist.
 Die Grafik (\ref{fig:Hier}) stellt dies als Ablaufdiagram dar.
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.77\textwidth]{gfx/Picture/Hier.PNG}
- \caption{Ablaufdiagram für das hierarchische Struktur Konzept}
+ \caption{Ablaufdiagram für das hierarchische Strukturkonzept}
  \label{fig:Hier}
 \end{figure}
 \newpage
 
 \section{Konzept minimalistische Struktur}
 \label{sec:chapter04:minimal}
-Im Gespräch der IT-Spezialisten kam der Vorschlag auf, dass man einen minimalistischen Ansatz nutzen könnte.
+Im Gespräch mit den IT-Spezialisten kam der Vorschlag auf, dass man einen minimalistischen Ansatz nutzen könnte.
 Dabei haben die IT-Spezialisten folgende Vorschläge für die Konventionen gemacht:
 \newline
 \begin{itemize}
@@ -379,12 +379,12 @@ Die neue Struktur wäre in diesem Beispiel ca. $12$ mal performanter als die bes
 \newline
 \newline
 Ebenso kann für dieses Konzept eine manuelle Lösung sowie auch eine automatische verwendet werden.
-Wie im vorherigen Fall kann eine Kopie vom vorherigen Konzept erstellt werden, welches dann in das neue Konzept modeliert wird.
+Wie im vorherigen Fall kann eine Kopie vom vorherigen Konzept erstellt werden, welche dann in das neue Konzept modeliert wird.
 Jedoch wird der Prozess der individuellen Berechtigungsvergabe zu den einzelnen Nutzern zeitaufwendig sein.
 Dabei können auch Berechtigungen verloren gehen, was dringend zu vermeiden ist.
 \newline
 Als Alternative kann ein Algorithmus verwendet werden.
-Dieser ist dem vorherigen in der Grundstruktur gleich:
+Dieser gleicht, in der Grundstruktur, dem vorherigen Algorithmus:
 \newline
 \newline
 \textbf{Algorithmus} conversionToNewStructure(DB$2$ T)
@@ -399,11 +399,11 @@ Dieser ist dem vorherigen in der Grundstruktur gleich:
 Der Algorithmus würde die komplette bisherige Struktur auseinanderbrechen.
 Anschließend werden die Standardprofile anhand der Fachbereiche neu geformt und den Nutzern der jeweiligen Bereiche zugewiesen.
 Die bisherigen Berechtigungen werden anschließend den Nutzern direkt angehängt.
-Redundate Berechtigungen werden entfernt.
+Redundante Berechtigungen werden entfernt.
 Die Grafik (\ref{fig:Mini}) stellt dies als Ablaufdiagram dar.
 \begin{figure}[h!]
  \centering
  \includegraphics[width=1\textwidth]{gfx/Picture/Mini.PNG}
- \caption{Ablaufdiagram für das Minimalistisch Konzept}
+ \caption{Ablaufdiagram für das minimalistische Konzept}
  \label{fig:Mini}
 \end{figure}
